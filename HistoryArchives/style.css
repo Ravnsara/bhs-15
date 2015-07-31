@@ -1,9 +1,628 @@
-@charset "utf-8";
-/* CSS Document */
+/*  
+Theme Name: 
+Description: Theme for a small archive collection organization 
+Version: 1.0
+Author(s): Patrick Daniels, Sunny Eun, Young Han, Christina Rome, Nicole Warnemuende
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: bhswa
 
-/* 
-Theme Name: bhs-15	
-Author: web 210 Group Project
-Description: BHS theme for web210 group project.
-Version 1.0
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
 */
+/*resets*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+body, body * {
+	box-sizing: border-box;	/* declared width = rendered width */
+	margin: 0;
+	padding: 0;
+}
+a img {
+ 	border: none;
+}
+a {
+	text-decoration: none;
+}
+/*end resets*/
+/*standard styles*/
+html {
+	font-size: 16px;
+	min-width: 600px;/*  ? what should this be?  */
+}
+body {
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+	font-size: 100%;
+	line-height: 1.4;
+}
+p {
+	/*font-size: 16px;*/
+	font-size: 1em;
+	line-height: 150%;
+	margin-bottom: 8px;
+	margin-left: 8px;
+}
+h1{
+	font-size: 2.25em;
+	/*font-size: 37.897px;*/
+	font-weight: 300;
+	line-height: 100%;
+	margin-bottom: 8px;
+}
+h2{
+	font-size: 1.5em;
+	/*font-size: 28.43px;*/
+	line-height: 100%;
+	font-weight: normal;
+	margin-bottom: 8px;
+
+}
+h3{
+	font-size: 1.125em;
+	/*font-size: 21.328px;*/
+	font-weight: normal;
+	line-height: 100%;
+	margin-bottom: 8px;
+}
+h4{
+	font-size: 1.108em;
+/*	font-size: 17.728px;*/
+	font-weight: normal;
+	line-height: 100%;
+	margin-bottom: 8px;
+}
+ul {
+	font-size: 1em;
+	line-height: 150%;
+	margin-left: 20px;	
+	margin-bottom: 8px;
+}
+ul li {
+	list-style-type: disc;
+	margin-left: 2.7%;
+	margin-bottom: 4px;
+}
+ol {
+	font-size: 1em;
+	line-height: 150%;
+	margin-left: 2.92%;
+	margin-bottom: 8px;
+}
+ol li {
+	font-size: 16px;/*should be the same size as p*/
+	margin-bottom: 4px;
+	margin-left: 28px;
+}
+dl {
+	margin-left: 8px;
+	margin-bottom: 8px;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin-left: 20px;
+	margin-bottom: 4px;
+}
+a{
+	text-decoration: none;
+}
+a:link {
+	color: black;
+}
+a:visited {
+	color: black;
+	text-decoration: none;
+}
+a:hover, a:focus {
+}
+a img, img {
+	border: none;
+	height: auto;
+	max-width: 100%;
+}
+blockquote {
+	font-style: italic;
+	margin: 30px;
+}
+strong {		
+	font-weight: bolder;
+}
+/*end standard styles*/
+
+/*header styles*/
+header {
+	border: 1px solid black;
+	height: 200px;
+	margin-top: 2px;
+	max-width: 100%;
+}
+#logo {
+	float: left;
+	height: 100%;
+}
+#logo a:hover {
+}
+#social {
+	float: right;
+	padding-top: 20px;
+	/*padding-right: 20px;*/
+	padding-right: 1.25em;
+}
+/*not sure what do do with this*/
+#header-right {
+	float: right;
+	height: 100%;
+}
+#search {
+	float: right;
+	margin-top: 120px;
+}
+#search input {
+	height: 30px;
+	max-width: 200px;
+}
+.search-form label span {
+	display: none;
+}
+.search-submit {
+	height: 30px;
+	max-width: 100px !important;	
+}
+/*end header styles*/
+
+/*nav styles*/
+#navigation {
+	border: 1px solid black;
+	clear: both;
+	height: 50px;
+  	/*max-width: 960px;*/
+  	max-width: 100%;
+	text-align: left;
+}
+#navigation a.hover, #navigation a.focus, #navigation a.current_page {
+}
+#navigation ul{
+	list-style-image: none;
+  	padding: 0;
+	margin: 0;
+  	width: auto;
+}
+#navigation ul li{
+	color: black;
+  	display: inline-block;
+  	*display: inline;
+	font-size: 14pt;
+	line-height: 50px;
+	list-style-type: none;
+	text-align: left;
+}
+#navigation a {
+	font-weight: bold;
+}
+#navigation li.current_page_item a {
+}
+#navigation li.last a {
+	border-right: none;
+	padding-right: 0;
+}
+	/*css menu selectors*/
+	#navigation > ul li.right {
+		  float: right;
+	}
+	#navigation > ul li.has-sub {
+	  position: relative;
+	}
+	#navigation > ul li.has-sub:hover ul {
+	  	display: block;
+	}
+	#navigation > ul li.has-sub ul {
+	  	background: #ffffff;
+	  	  	border: 1px solid #ece6e8;
+		  	border-bottom: 3px solid #d9ced2;
+		 	border-top: 0 none;
+		display: none;
+   		list-style-type: none;
+ 		position: absolute;
+  		margin: 0;
+  		padding: 0;
+		text-align: left;
+		width: 160px;
+	}
+	#navigation > ul li.has-sub ul li {
+	  	display: block;
+	}
+	#navigation > ul li.has-sub > a {
+	}
+	#navigation > ul li.has-sub > a.active,
+	#navigation > ul li.has-sub > a:hover {
+	  	background-position: -90% 195%; /*   what is this for? */
+	}
+	#navigation > ul li.active {
+	}
+	#navigation > ul li a.active,
+	#navigation > ul li a:hover {
+		background-color: #ffffff;
+	}
+	#navigation > ul li a {
+		text-decoration: none;
+			background-color: #ffffff;
+	}
+	/*end css menu selectors*/
+/*end nav styles*/
+/*end header styles*/
+
+/*content styles*/
+#wrapper {
+	clear: both;
+	overflow: hidden;
+	margin: 0 auto;
+	max-width: 960px;
+}
+#main {
+	background-size: 100%;
+	background-repeat: no-repeat;
+	clear: both;
+	float: left;
+	max-width: 640px;
+}
+#image-slider {
+	float: left;
+	height: 380px;
+	margin-left: 20px;
+	max-width: 620px;
+}
+#image-slider img {
+	max-height: 380px;
+	max-width: 620px;
+}
+#content {
+	clear: both;
+	margin-top: 5px;
+	margin-left: 2.08%;
+	max-width: 640px;
+}
+/*end content styles*/
+
+/*primary sidebar styles*/
+#primary {
+	float: right;
+	padding-right: 20px;
+	width: 300px;
+}
+#primary h3 {
+	border-bottom: 1px solid black;
+	font-size: 14pt;
+	line-height: 30px;
+}
+#primary ul li {
+	list-style-type: none;
+	margin-left: 0;
+	padding-bottom: 10px;
+}
+#primary ul li a {
+	color: blue;
+}
+#primary ul {
+	margin-left: 0;
+}
+#primary p {
+	margin-left: 0;
+}
+/*end primary sidebar styles*/
+
+.email {
+	height: 40px;
+	margin-bottom: 10px;
+	width: 200px;
+}
+.paypal {
+	border-radius: 25px;
+	border: 1px solid black;
+	font-size: 14pt;
+	height: 80px;
+	width: 100%;
+}
+
+/*footer styles*/
+footer {
+	border: 1px solid black;
+	clear: both;
+	float: left;
+	margin-top: 32px;
+	height: 250px;
+	/*max-width: 960px;*/
+	max-width: 100%;
+}
+footer ul li {
+	display: inline;
+	list-style-type: none;
+	float: left;
+	padding-top: 5%;
+	width: 45%;
+}
+footer ul li a {
+	color: black;
+}
+footer a:hover, footer a:focus {
+	border-bottom: 1px solid #939393;
+}
+footer p a:hover, footer p a:focus {
+	border-bottom: none !important;
+}
+/*end footer styles*/
+
+/*  ---------------  BEGIN WORDPRESS-GENERATED SELECTORS  ---------------  */		
+		
+div.entry {
+	margin-bottom: 20px;
+}
+.wp-caption-text  {
+}
+.alignnone {
+	margin-bottom: 10px; 
+}
+.alignleft {	/* applies to floated images */
+	float: left;
+	margin: 0 10px 10px 0px ; 
+}
+.alignright { 	/* applies to floated images */
+	float: right;
+	margin: 0 0px 10px 10px; 
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#previous_image a, 
+#next_image a {
+	border-bottom: none; 
+}
+.attachment-thumbnail, 
+.size-thumbnail {
+	padding: 5px;
+}
+#gallery-box {
+	clear: both;
+	float: left;
+	width: 780px;
+	margin-bottom: 25px;
+}
+#gallery-box p {
+	margin: 0px !important;
+}
+#comments-box,
+#respond {
+	clear: both; 	/* clears floated prev/next nav on comments.php template */	
+}
+#respond h3{
+	margin-left: 5px;
+}
+	
+/* COMMENTS */
+
+#comments-head {
+	border-bottom: 1px solid #ddd;
+}
+#comments-box ol,
+#comments-box ul {
+	list-style-type:none;
+	padding-left: 0;
+	margin-left: 0;	
+}
+#comments-box ol li {
+	margin: 10px 0;
+}
+#comments-box cite {
+	font-weight:bold;
+	font-size: 13px;
+}
+.comment-author {
+	margin-bottom: 2px;
+}
+.comment p {
+	clear:both
+}
+.reply {
+	font-size:10px;
+}
+.comment-meta {
+	background-color: #FFFFFF !important;
+	font-size:12px;
+	height: 50px;
+}
+/*removed based on feedback 
+#commentform p {
+	font-size: 12px;
+}*/
+.avatar {
+	float: left;
+	margin: 0 10px 10px 0;
+}
+#content img.print {
+	float: right;
+	border: none;
+	clear:both;
+	margin-bottom: 20px;
+}
+#content object { 
+	margin: 0 0 10px 0px ; 
+}
+	
+#content pre {
+	max-height: 300px;
+	font-size: 12px;
+	padding: 10px;
+	margin: 10px 0px;
+	overflow: auto;
+}
+.clear {
+	clear:both;
+}
+					
+/* POST ITEMS */
+.post-box {
+	border-bottom:1px solid #DDDDDD;
+	margin-bottom:30px;
+	padding-bottom:10px;
+}
+
+.postmetadata {
+	float: left;
+	font-style:italic;
+	width: 460px;
+}
+
+.sticky {
+	
+}
+
+.bypostauthor {
+	
+}
+
+.read-more {
+	font-style: italic;	
+}
+
+/* GALLERY ITEMS */
+.gallery {
+	margin: auto;
+}
+	
+.gallery-item {
+	float: left;
+	margin: 5px 3px 5px 0;
+	text-align: center;
+}
+	
+#content p.smallattachment a, 
+#content dl.gallery-item a {
+	border-bottom: none;
+}
+	
+#gallery-box img {
+	height: 400px;
+	width: 780px;
+}
+	
+.gallery-caption {
+	margin-left: 0;
+}
+	
+#content p.wp-caption-text {
+	margin-top: 10px;
+	font-size: 12px;
+}
+		
+/*  ---------------  END WORDPRESS-GENERATED SELECTORS  ---------------  */		
+/* ----------------  BEGIN RESPONSIVE CSS -----------------------------  */
+@media screen and (min-width: 1200px) {
+	#navigation > ul li#responsive-tab {
+	 	 display: none;
+	 	 /* Hide for large screens */
+	}
+}
+
+/* Tablet Screen Set to 800px or Below  */
+@media screen and (max-width: 800px) {
+	#navigation > ul li#responsive-tab {
+	  	display: none;
+	  	/* Hide for large screens */
+	}
+}
+/* Mobile Screen Set to 600px or Below  */
+@media screen and (max-width: 600px) {
+	body {
+		margin: 0;
+		padding: 0;
+		width: 600px;
+	}
+	#wrapper {
+		max-width: 100%;
+	}
+	#header {
+		max-width: 100%;
+	}
+	#navigation > ul {
+    	width: 100%;
+	  }
+	  #navigation > ul li#responsive-tab {
+	    display: block;
+	  }
+	  #navigation > ul li#responsive-tab a {
+	    background: url('images/menu.png') no-repeat;
+	    background-position: 95% -35%;
+	  }
+	  #navigation > ul li#responsive-tab a:hover {
+	    background-position: 95% 135%;
+	  }
+	  #navigation > ul li {
+	    display: none;
+	  }
+	  #navigation > ul li.right {
+	    float: none;
+	  }
+	  #navigation > ul li.has-sub {
+	    position: relative;
+	  }
+	  #navigation > ul li.has-sub ul {
+	    background: #ffffff;
+	    display: block;
+	    position: static;
+	    width: 100%;
+    	border: 0 none;
+	  }
+	  #navigation > ul li.has-sub ul li {
+	    display: block !important;
+	  }
+	  #navigation > ul li.has-sub ul li a span {
+	    display: block;
+	    padding-left: 24px;
+	  }
+	  #navigation > ul li.has-sub > a {
+	    background-image: none;
+	  }
+	#image-slider, #image-slider img {
+		margin-left: 0;
+		max-width: 100%;
+	}
+	#main {
+		margin-top: 5px;
+		max-width: 100%;
+	}
+	#content {
+		margin-left: 2.08%;
+		max-width: 98%;
+	}	
+	#primary {
+		clear: both;
+		float: left;
+		padding-left: 2.08%;
+		padding-right: 1.04%;
+		max-width: 100%
+	}
+	#primary ul li {
+		list-style-type: none;
+		margin-left: 2.08%;
+		padding-bottom: 10px;
+	}
+  	footer {
+  		max-width: 100%;
+  	}
+  	footer ul li {
+  		display: block;
+  		width: 95%;
+  	}
+}
+/* Make sure they show even if hidden in mobile view by JS */
+@media (min-width: 600px) {
+  #navigation > ul > li.collapsed {
+    display: inline-block !important;
+    *display: inline;
+  }
+  #navigation > ul ul li.collapsed {
+    display: block !important;
+  }
+}
+/* ----------------  END RESPONSIVE CSS -------------------------------  */
