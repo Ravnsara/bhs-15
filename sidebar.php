@@ -1,7 +1,7 @@
 <aside id="primary"> 	<?php /*?> the aside's id is used for CSS styling <?php */?>
-	<?php if ( is_active_sidebar( 'primar' ) ) : ?>  
+	<?php if ( is_active_sidebar( 'primary' ) ) : ?>  
 		<ul>
-			<?php dynamic_sidebar( 'primar' ); ?>
+			<?php dynamic_sidebar( 'primary' ); ?>
 		</ul>
 	<?php else : ?>
 	<ul>
@@ -37,5 +37,5 @@
 			</ul>
 		</li>
 	</ul><!--end widgets-->
+	<?php endif; ?>
 </aside><!--end sidebar-->
-<?php endif; ?>

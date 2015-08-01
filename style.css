@@ -245,7 +245,6 @@ header {
 	}
 	#navigation > ul li a {
 		text-decoration: none;
-			background-color: #ffffff;
 	}
 	/*end css menu selectors*/
 /*end nav styles*/
@@ -308,6 +307,17 @@ header {
 #primary p {
 	margin-left: 0;
 }
+.widget {
+	float: left;
+	margin-bottom: 20px;
+	width: 280px;
+}
+.widget ul li {
+	list-style-type: none;
+}
+.widget-title {
+	font-style: bold;
+}
 /*end primary sidebar styles*/
 
 .email {
@@ -322,6 +332,31 @@ header {
 	height: 80px;
 	width: 100%;
 }
+/*index styles*/
+.index-post-latest {
+	border-bottom: 1px solid #DDDDDD;
+	clear: both;
+	float: left;
+	margin-bottom: 20px;
+	max-width: 600px;
+}
+.index-latest-blog-title {
+	color: #555555;
+	float: left;
+	font-weight: bold !important;
+	line-height: 1.3;
+	margin-bottom: 30px;
+	padding-left: 10px;
+	padding-top: 15px;
+	width: 200px ;
+}
+.excerpt {
+	padding-top: 12px;
+	font-size: 1em;
+	float: right;
+	width: 380px;
+}
+/*end index styles*/
 
 /*footer styles*/
 footer {
