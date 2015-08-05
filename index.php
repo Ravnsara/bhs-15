@@ -29,8 +29,8 @@
 		</div><!--end content-->
 	</div><!--end main-->
 
-	<!--start sidebar-->
-	<?php get_sidebar(); ?>
-	<!--start sidebar-->
+<!--start sidebar-->
+<?php get_sidebar(); ?>
+<!--start sidebar-->
 <!--end main-->
 <?php get_footer(); ?>

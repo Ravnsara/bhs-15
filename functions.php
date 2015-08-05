@@ -69,6 +69,26 @@ function my_register_sidebars() {
 			'after_title' => '</h3>'
 		)
 	);
+	register_sidebar(
+		array(
+			'id' => 'secondary',
+			'name' => __( 'Secondary Sidebar' ),
+			'before_widget' => '<li id="%1$s" class="widget %2$s">',
+			'after_widget' => '</li>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
+	register_sidebar(
+		array(
+			'id' => 'impressions',
+			'name' => __( 'Impressions Sidebar' ),
+			'before_widget' => '<li id="%1$s" class="widget %2$s">',
+			'after_widget' => '</li>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
 	/* Repeat register_sidebar() code for additional sidebars. */
 }
 // Remove rel attribute from the category list
@@ -81,8 +101,51 @@ add_filter('wp_list_categories', 'remove_category_list_rel');
 add_filter('the_category', 'remove_category_list_rel');
 
 /*nicole's additions*/
-//sets custom excerpt length for index page
+//sets custom excerpt length
 function custom_excerpt_length( $length ) {
 	return 25;
 }
+
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+//adds and initilizes excerpt for pages
+add_action( 'init', 'my_add_excerpts_to_pages');
+function my_add_excerpts_to_pages(){
+	add_post_type_support( 'page', 'excerpt');
+}
+
+//pulls in children page excerpt
+function get_children_pages() {
+	
+	global $post;
+	
+	rewind_posts(); // stop any previous loops 
+	query_posts(array(
+		'post_parent' => $post->ID,
+		'post_type' => 'page', 
+		'posts_per_page' => -1, 
+		'post_status' => publish,
+		'order' => 'ASC',
+		'orderby' => 'menu_order'
+	)); // query and order child pages 
+    
+	while (have_posts()) : the_post(); 
+	
+		$childPermalink = get_permalink( $post->ID ); // post permalink
+		$childID = $post->ID; // post id
+		$childTitle = $post->post_title; // post title
+		$childExcerpt = $post->post_excerpt; // post excerpt
+        
+		echo '<article id="page-excerpt-'.$childID.'" class="page-excerpt">';
+		echo '<h3><a href="'.$childPermalink.'">'.$childTitle.' </a></h3>';
+		echo '<p>'.$childExcerpt.' <a href="'.$childPermalink.'">Read More&nbsp;&raquo;</a></p>';
+		echo '</article>';
+        
+	endwhile;
+	
+	// reset query
+	wp_reset_query();
+}
+if(is_page( 'about' )){
+
+}

@@ -46,7 +46,7 @@
 	<header>
 		<div id="logo">
 			<a href="<?php echo get_option('front-page');?>">
-				<img src="<?php bloginfo('template_url');?>/images/bhs-logo.jpg" alt="<?php bloginfo('name'); ?>">
+				<img src="<?php bloginfo('template_url');?>/images/bhs-logo.png" alt="<?php bloginfo('name'); ?>">
 			</a>
 		</div><!--end logo-->
 		<div id="header-right">
@@ -69,22 +69,6 @@
 			'link_before' => '<span>',
 			'link_after' => '</span>',
 		) ); ?>
-		<!--insert wp code for navigation-->
-		<!--ul>
-			<li class="active"><a href="home.html">Home</a></li>
-			<li><a href="#"><span>About</span></a></li>
-			<li><a href="#"><span>Collections</span></a></li>
-			<li class="has-sub"><a href="#"><span>Projects</span></a>
-				<ul>
-					<li class=""><a href="#"><span>Impressions</span></a></li>
-					<li class="last"><a href="#"><span>Roots</span></a></li>
-				</ul>
-			</li>
-			<li><a href="main.html"><span>Get Involved</span></a></li>
-			<li><a href="#"><span>News and Events</span></a></li>
-			<li><a href="#"><span>Contact</span></a></li>
-			<li class="last"><a href="#"><span>Resources</span></a></li>
-		</ul-->
 	</div><!--end navigation-->
 	<div id="main">
 <!--end header-->

@@ -7,5 +7,20 @@
 	</footer>
 	<?php wp_footer(); ?> 
 </div><!--end wrapper-->
+<script>
+$(document).ready(function($){
+	$('.accordion-content').hide();
+
+	//when h4 element is clicked
+	$('#accordion').find('h4').click(function(){
+
+		//toggle open or close 
+		$(this).next().slideToggle('slow');
+
+		//slide up the content not selected
+		$(".accordion-content").not($(this).next()).slideUp();
+	});
+});
+</script>
 </body>
 </html><!--end footer-->
