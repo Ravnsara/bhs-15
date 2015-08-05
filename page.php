@@ -7,13 +7,16 @@
     			<?php edit_post_link('Edit this entry.', '<p class="clear"><small>', '</small></p>'); ?>
 			</div>
 			<?php endwhile; endif; ?>  
-
+			<?php get_children_pages(); ?>
 		</div><!--end content-->
 	</div><!--end main-->	
 	<!--end main-->
 
-	<!--start sidebar-->
-	<?php get_sidebar(); ?>
-	<!--start sidebar-->
+<!--start sidebar-->
+<?php if(is_page( 'about' )){ get_sidebar( 'secondary' ); } 
+elseif (is_page( 'impressions' )){ get_sidebar( 'impressions' ); } 
+else {get_sidebar( 'primary' );}
+?>
+<!--end sidebar-->
 
-	<?php get_footer(); ?>
+<?php get_footer(); ?>
