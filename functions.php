@@ -17,7 +17,7 @@ add_theme_support( 'automatic-feed-links' );
 //adds feature image option
 add_theme_support( 'post-thumbnails' ); 
 
-add_image_size( 'feature-image', 620, 380 );
+add_image_size( 'feature-image', 610, 380 );
 add_image_size( 'bhs-logo', 183, 182 );
 
 /*nicole's additions*/

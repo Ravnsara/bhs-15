@@ -2,11 +2,16 @@
 		<!--begin main-inside-->
 			<?php if(is_front_page()) : ?>
 
-			<div id="image-slider">
-				<?php if(has_post_thumbnail() ){ 
-					the_post_thumbnail('feature-image');
-				}; ?>
-			</div><!--end image-slider-->
+			<!--start flexslider-->
+			<div class="flexslider">
+				<ul class="slides">
+					<li><img src="<?php bloginfo('template_url');?>/images/Slide1.jpg"></li>
+					<li><img src="<?php bloginfo('template_url');?>/images/Slide2.jpg"></li>
+					<li><img src="<?php bloginfo('template_url');?>/images/Slide3.jpg"></li>
+				</ul>
+			</div>
+			<!--end flexslider-->
+			
 			<!--start sidebar-->
 			<?php choose_sidebar();
 			//choose_sidebar(); ?>		
