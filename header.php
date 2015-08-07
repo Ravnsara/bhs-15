@@ -15,24 +15,36 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
     <!--jquery for responsive nav item-->
-	<script>
-		( function( $ ) {
-			$( document ).ready(function() {
-				// Cache the elements we'll need
-				var menu = $('#navigation');
-				var menuList = menu.find('ul:first');
-				var listItems = menu.find('li').not('#responsive-tab');
+    <script>
+	$(document).ready(function($){
+		$('.accordion-content').hide();
 
-				// Create responsive trigger
-				menuList.prepend('<li id="responsive-tab"><a href="#">Menu</a></li>');
+		//when h4 element is clicked
+		$('#accordion').find('h4').click(function(){
 
-				// Toggle menu visibility
-				menu.on('click', '#responsive-tab', function(){
-					listItems.slideToggle('fast');
-					listItems.addClass('collapsed');
-				});
-			});
-		} )( jQuery );
+			//toggle open or close 
+			$(this).next().slideToggle('slow');
+			$(this).css({"background-color" : "#DFC99D"});
+
+			//slide up the content not selected
+			$(".accordion-content").not($(this).next()).slideUp();
+			
+		});
+
+		// Cache the elements we'll need
+		var menu = $('#navigation');
+		var menuList = menu.find('ul:first');
+		var listItems = menu.find('li').not('#responsive-tab');
+
+		// Create responsive trigger
+		menuList.prepend('<li id="responsive-tab"><a href="#">Menu</a></li>');
+
+		// Toggle menu visibility
+		menu.on('click', '#responsive-tab', function(){
+			listItems.slideToggle('fast');
+			listItems.addClass('collapsed');
+		});
+	});
 	</script>
 	<!-- Remy Sharp Shim --> 
 	<!--[if lt IE 9]> 
@@ -45,13 +57,14 @@
 	<div id="wrapper">
 	<header>
 		<div id="logo">
-			<a href="<?php echo get_option('front-page');?>">
-				<img src="<?php bloginfo('template_url');?>/images/bhs-logo.png" alt="<?php bloginfo('name'); ?>">
+			<a href="<?php echo esc_url(home_url());?>">
+				<img src="<?php bloginfo('template_url');?>/images/BHSwa-logo-round.png" alt="<?php bloginfo('name'); ?>">
 			</a>
 		</div><!--end logo-->
 		<div id="header-right">
+			<div id="header-img"><img src="<?php bloginfo('template_url');?>/images/Sojourner_Truth_Home_Final.png" alt="Sojourner Truth Home" ?></div>
 			<div id="social">
-				<img src="<?php bloginfo('template_url');?>/images/fb-logo.jpg" alt="facebook logo" ?>
+				<img src="<?php bloginfo('template_url');?>/images/fb-logo.png" alt="facebook logo" ?>
 				<!--span class="dashicons dashicons-facebook-alt"></span>-->
 				<!--img src="fb-logo.jpg" alt="facebook logo" /-->
 			</div><!--end social-->
@@ -61,6 +74,8 @@
 			</div><!--end search-->
 		</div><!--end header-right-->
 	</header>
+	<div id="header-bar">
+	</div>	
 	<div id="navigation">
 		<?php wp_nav_menu( array( 
 			'theme_location' => 'main-menu' ,
@@ -70,5 +85,6 @@
 			'link_after' => '</span>',
 		) ); ?>
 	</div><!--end navigation-->
-	<div id="main">
+	<div id="main-outside">
+		<div id="main-inside">
 <!--end header-->

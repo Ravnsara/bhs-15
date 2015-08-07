@@ -47,8 +47,8 @@ if ( function_exists( 'register_nav_menus' ) ) {
 	register_nav_menus(
 		array(
 		  'main-menu' => 'Main Menu',
-		  /*'pages-menu' => 'Pages Menu',*/
-		  /*'links-menu' => 'Links Menu',*/
+		  'footer-menu-1' => 'Footer Menu 1',
+		  'footer-menu-2' => 'Footer Menu 2'
 		)
 	);
 } 
@@ -90,6 +90,19 @@ function my_register_sidebars() {
 		)
 	);
 	/* Repeat register_sidebar() code for additional sidebars. */
+}
+
+//set sidebar based on page
+function choose_sidebar() {
+	if(is_page( 'about' )){ 
+		get_sidebar( 'secondary' );
+	} 
+	elseif (is_page( 'impressions' )){ 
+		get_sidebar( 'impressions' );
+	} 
+	else {
+		get_sidebar( 'primary' );
+	}
 }
 // Remove rel attribute from the category list
 function remove_category_list_rel($output)
@@ -145,7 +158,4 @@ function get_children_pages() {
 	
 	// reset query
 	wp_reset_query();
-}
-if(is_page( 'about' )){
-
 }

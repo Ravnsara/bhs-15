@@ -1,41 +1,31 @@
 <aside id="primary"> 	<?php /*?> the aside's id is used for CSS styling <?php */?>
+	
 	<?php if ( is_active_sidebar( 'primary' ) ) : ?>  
+		
 		<ul>
 			<?php dynamic_sidebar( 'primary' ); ?>
 		</ul>
+
 	<?php else : ?>
+
+	<!--begin default sidebar-->
 	<ul>
-		<li><h3>Subscribe to Our Mailing List</h3>
-			<form action="home.html" method="post">
-				<input type="email" class="email" value="Email Address"><br />
-				<input type="submit" id="submit" value="Subscribe">
-			</form>
+		<li><h3>Search</h3>
+			<?php get_search_form(); ?>
 		</li>
-		<li><h3>Donate</h3>
-			<input type="submit" class="paypal" value="Donate through PayPal">
-		</li>
-		<li><h3>Upcoming Events</h3>
+		<li><h3>Ways to Get Involved</h3>
 			<ul>
-				<li><a href="#">Event-Date</a>
-					<p>Lorem ipsum dolor sit amet, consectetur
-					adipiscing elit, sed do eiusmod tempor
-					incididunt ut labore et dolore magna
-					aliqua.</p>
-				</li>
-				<li><a href="#">Event-Date</a>
-					<p>Lorem ipsum dolor sit amet, consectetur
-					adipiscing elit, sed do eiusmod tempor
-					incididunt ut labore et dolore magna
-					aliqua.</p>
-				</li>
-				<li><a href="#">Event-Date</a>
-					<p>Lorem ipsum dolor sit amet, consectetur
-					adipiscing elit, sed do eiusmod tempor
-					incididunt ut labore et dolore magna
-					aliqua.</p>
-				</li>
+				<li>Volunteer</li>
+				<li>Memberships</li>
+				<li>Donate</li>
 			</ul>
 		</li>
-	</ul><!--end widgets-->
+		<li><h3>Donate</h3>
+			<p>You can donate through paypal using
+			our email address</p>
+		</li>
+	</ul><!--end default sidebar-->
+	
 	<?php endif; ?>
+
 </aside><!--end sidebar-->
