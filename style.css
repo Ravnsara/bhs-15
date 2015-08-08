@@ -25,56 +25,51 @@ a {
 }
 /*end resets*/
 /*standard styles*/
+
+
+h4 {}
+
+small, .font_small {font-size: 0.889em;}
+
 html {
-	font-size: 16px;
+	font-size: 1em;
 	min-width: 600px;/*  ? what should this be?  */
 }
 body {
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
-	/*font-size: 100%;*/
-	font-size: 1em;
-	line-height: 1.4;
+	font-family: "Libre Baskerville", serif, "Droid Sans", sans-serif, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 100%;
+  	font-weight: 400;
 }
 p {
-	/*font-size: 16px;*/
-	/*font-size: 1em;*/
+	font-size: 1em;
 	color: #494949;
 	font-size: .813em;
 	line-height: 1.66;
-	margin-bottom: 8px;
+	margin-bottom: 1.3em;
+}
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-weight: inherit;
+  line-height: 1.2;
 }
 h1{
-	font-size: 2.25em;
-	/*font-size: 37.897px;*/
-	font-weight: 300;
+  	margin-top: 0;
+  	font-size: 1.602em;
 	line-height: 100%;
-	margin-bottom: 8px;
 }
 h2{
 	color: #5B4131;
-	font-size: 1.375em;
-	/*font-size: 1.5em;
-	font-size: 28.43px;*/
+	font-size: 1.424em;
 	line-height: 100%;
 	font-weight: bold;
-	margin-bottom: 8px;
-
 }
 h3{
-	font-size: 1.063em;
-	font-weight: bold;
-	/*font-size: 1.125em;
-	font-size: 21.328px;
-	font-weight: normal;*/
+	font-size: 1.266em;
 	line-height: 100%;
-	margin-bottom: 8px;
 }
 h4{
-	font-size: 1.108em;
-/*	font-size: 17.728px;*/
-	font-weight: normal;
+	font-size: 1.125em;
 	line-height: 100%;
-	margin-bottom: 8px;
 }
 ul {
 	font-size: 1em;
@@ -156,8 +151,7 @@ header {
 #social {
 	float: right;
 	padding-top: 20px;
-	/*padding-right: 20px;*/
-	padding-right: 30px;
+	margin-right: 15px;
 }
 /*not sure what do do with this*/
 #header-right {
@@ -190,9 +184,12 @@ header {
 #navigation {
 	background-color: #58581F;
 	clear: both;
+	font-family: 'Libre Baskerville', serif;
+	font-size: .85em;/*what works*/
 	height: 50px;
+	/*font-size: 1.8em; what vis specs ask for and doesn't work*/ 
+	padding-right: 20px;
   	max-width: 100%;
-	text-align: left;
 }
 #navigation a.hover, #navigation a.focus, #navigation a.current_page {
 	background-color: #58581F;
@@ -206,9 +203,8 @@ header {
 #navigation ul li{
   	display: inline-block;
   	*display: inline;
-	font-size: .95em;
-	line-height: 50px;
 	list-style-type: none;
+	line-height: 50px;
 	text-align: right;
 	width: auto;
 }
@@ -228,6 +224,7 @@ header {
 	}
 	#navigation > ul li.has-sub {
 	  position: relative;
+		z-index: 11;
 	}
 	#navigation > ul li.has-sub:hover ul {
 	  	display: block;
@@ -275,7 +272,7 @@ header {
 
 /*content styles*/
 #wrapper {
-	background-image: url("images/grid.png");
+	border-color: #fff;	
 	clear: both;
 	margin: 0 auto;
 	max-width: 980px;
@@ -291,6 +288,7 @@ header {
 	background-color: rgba(255, 255, 255, 0.5);
 	clear: both;
 	float: left;
+	font-family: 'Droid', sans-serif;
 	margin-bottom: 0;
 	margin-left: 3.06122%;
 	margin-right: 3.06122%;
@@ -301,19 +299,22 @@ header {
 	clear: both;
 	margin-top: 25px;
 	max-width: 62.24489%;
-	padding-left: 2.04081%;
 }
 #page-content {
 	float: left;
 	margin-top: 25px;
 	max-width: 62.24489%;
-	padding-left: 2.04081%;
 }
 #front-page-content h2, #page-content h2 {
-	font-size: 1.375em;
+	font-size: 1.5em;
 	color: #5b4131;
 	font-weight: bold;
-	margin: 20px 0 10px 0;
+	margin: 30px 0 15px 45px;
+}
+#front-page-content p, #page-content p {
+	font-size: 1em;
+	color:#494949;
+	margin: 0 0 24px 45px;
 }
 
 .flexslider {
@@ -367,9 +368,9 @@ aside {
 aside h3 { 
 	border-bottom: 3px solid #b7b47d;
 	color: #726244; 
-	font-size: 1.063em;
+	font-size: 1.188em;
 	font-weight: bold;
-	line-height: 30px;
+	line-height: 1.188em;
 	margin-bottom: 15px;
 }
 aside ul li {
@@ -742,9 +743,8 @@ div.entry {
 		margin-top: 25px;
 		max-width: 100%;
 	}
-	#content {
-		margin-left: 2.08%;
-		max-width: 98%;
+	#front-page-content, #page-content {
+		max-width: 100%;
 	}
 	aside {
 		clear: both;
@@ -763,7 +763,6 @@ div.entry {
   	}
   	footer ul li {
   		display: block;
-  		width: 95%;
   	}
 }
 /* Make sure they show even if hidden in mobile view by JS */

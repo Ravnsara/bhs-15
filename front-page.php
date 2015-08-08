@@ -13,8 +13,9 @@
 			<!--end flexslider-->
 			
 			<!--start sidebar-->
-			<?php choose_sidebar();
-			//choose_sidebar(); ?>		
+			<?php choose_sidebar(); ?>
+			<!--end sidebar-->
+
 			<div id="front-page-content">
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -28,7 +29,6 @@
 			</div><!--end front-page-content-->
 
 			<?php endif; ?>
-		<!--end sidebar-->
 		</div><!--end main-inside-->	
 	</div><!--end main-outside-->
 <?php get_footer(); ?>

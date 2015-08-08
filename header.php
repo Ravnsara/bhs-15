@@ -6,7 +6,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=1.0" />
 <meta name="robots" content="no index, no follow" />
-<meta name="author" content="" />
+<meta name="author" content="nicole warnemuende" />s
 <!--end meta-->
 
 <!-- Remy Sharp Shim --> 
@@ -17,6 +17,7 @@
 <!--Start links-->
 <link rel="shortcut icon" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/favicon.ico" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville|Droid+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/flexslider.css" type="text/css" media="all" />
 <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/style.css" type="text/css" media="all" />
 <!--end links-->
@@ -37,21 +38,24 @@
 				<img src="<?php bloginfo('template_url');?>/images/BHSwa-logo-round.png" alt="<?php bloginfo('name'); ?>">
 			</a>
 		</div><!--end logo-->
+
 		<div id="header-right">
 			<div id="header-img"><img src="<?php bloginfo('template_url');?>/images/Sojourner_Truth_Home_Final.png" alt="Sojourner Truth Home" ?></div>
+
 			<div id="social">
 				<img src="<?php bloginfo('template_url');?>/images/fb-logo.png" alt="facebook logo" ?>
-				<!--span class="dashicons dashicons-facebook-alt"></span>-->
-				<!--img src="fb-logo.jpg" alt="facebook logo" /-->
 			</div><!--end social-->
+
 			<div id="search">
 				<?php get_search_form(); ?>
-				<!--input type="search" class="search"-->
 			</div><!--end search-->
+
 		</div><!--end header-right-->
 	</header>
-	<div id="header-bar">
+
+	<div id="header-bar"><!--adds color bar to complete header image-->
 	</div>	
+	
 	<div id="navigation">
 		<?php wp_nav_menu( array( 
 			'theme_location' => 'main-menu' ,
@@ -61,6 +65,9 @@
 			'link_after' => '</span>',
 		) ); ?>
 	</div><!--end navigation-->
+
+	<!--start main-outside-->
 	<div id="main-outside">
+		<!--start main-inside-->
 		<div id="main-inside">
 <!--end header-->

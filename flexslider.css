@@ -135,12 +135,13 @@ html[xmlns] .flexslider .slides {
   display: inline-block;
   /*content: '\f001';*/
   content: '<';
-  color: rgba(0, 0, 0, 1);
+  color: #000;
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
 }
 .flex-direction-nav a.flex-next:before {
   /*content: '\f002';*/
   content: '>';
+  color: #000;
 }
 .flex-direction-nav .flex-prev {
   left: -50px;
