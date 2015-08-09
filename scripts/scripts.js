@@ -25,11 +25,11 @@ $(document).ready(function($){
 
 	$('#accordion').find('h4').click(function(){
 
-		$(this).next().slideToggle('slow');
+		$(this).next().slideToggle('fast');
 		$(this).css({"background-color" : "#DFC99D"});
-
-		$(".accordion-content").not($(this).next()).slideUp();
+		$("#accordion h4").not($(this)).css({"background-color" : "#ECE0C9"});
+		$(".accordion-content").not($(this).next()).slideUp('fast');
 		
 	});
 	//end accordion script
-});
+});//end document.ready
