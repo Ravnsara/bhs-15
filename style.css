@@ -1,6 +1,6 @@
-/*  
+/*
 Theme Name: bhs-15
-Description: Theme for a small archive collection organization 
+Description: Theme for a small archive collection organization
 Version: 1.0
 Author(s): Patrick Daniels, Sunny Eun, Young Han, Christina Rome, Nicole Warnemuende
 License: GNU General Public License v2 or later
@@ -36,20 +36,20 @@ html {
 	min-width: 600px;/*  ? what should this be?  */
 }
 body {
-	font-family: "Libre Baskerville", serif, "Droid Sans", sans-serif, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family:"Droid Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 100%;
-  	font-weight: 400;
+  /*font-weight: 400;*/
 }
 p {
 	font-size: 1em;
 	color: #494949;
-	font-size: .813em;
 	line-height: 1.66;
 	margin-bottom: 1.3em;
 }
 h1, h2, h3, h4 {
+	color: #5B4131;
   margin: 1.414em 0 0.5em;
-  font-weight: inherit;
+  font-weight: bold;
   line-height: 1.2;
 }
 h1{
@@ -58,10 +58,9 @@ h1{
 	line-height: 100%;
 }
 h2{
-	color: #5B4131;
 	font-size: 1.424em;
 	line-height: 100%;
-	font-weight: bold;
+
 }
 h3{
 	font-size: 1.266em;
@@ -124,7 +123,7 @@ blockquote {
 	font-style: italic;
 	margin: 30px;
 }
-strong {		
+strong {
 	font-weight: bolder;
 }
 /*end standard styles*/
@@ -176,7 +175,7 @@ header {
 }
 .search-submit {
 	height: 30px;
-	max-width: 100px !important;	
+	max-width: 100px !important;
 }
 /*end header styles*/
 
@@ -186,18 +185,26 @@ header {
 	clear: both;
 	font-family: 'Libre Baskerville', serif;
 	font-size: .85em;/*what works*/
-	height: 50px;
-	/*font-size: 1.8em; what vis specs ask for and doesn't work*/ 
-	padding-right: 20px;
+	/*height: 50px;*/
+	/*font-size: 1.8em; what vis specs ask for and doesn't work*/
+	padding-right: 15px;
   	max-width: 100%;
 }
+
 #navigation a.hover, #navigation a.focus, #navigation a.current_page {
 	background-color: #58581F;
+
+}
+#navigation li a:hover, #navigation li a:focus{
+	text-decoration:none;
+	color:#d9a734;
+	text-shadow: .5px .5px .5px #684901;
+
 }
 #navigation ul{
 	list-style-image: none;
 	margin: 0;
-	padding-right: 10px;
+	/*padding-right: 10px;*/
 	text-align: right;
 }
 #navigation ul li{
@@ -209,7 +216,7 @@ header {
 	width: auto;
 }
 #navigation a {
-	color: white;
+	color:white;
 	font-weight: bold;
 }
 #navigation li.current_page_item a {
@@ -236,7 +243,7 @@ header {
    		list-style-type: none;
  		position: absolute;
   		margin: 0;
-  		padding: 0;
+  		padding: 5px;
 		text-align: left;
 		width: 160px;
 	}
@@ -272,7 +279,7 @@ header {
 
 /*content styles*/
 #wrapper {
-	border-color: #fff;	
+	border-color: #fff;
 	clear: both;
 	margin: 0 auto;
 	max-width: 980px;
@@ -281,6 +288,8 @@ header {
 	background-color: #828248;
 	clear: both;
 	float: left;
+	padding-left:3.06122%;
+	padding-right:3.06122%;
 	margin-top: 15px;
 	max-width: 980px;
 }
@@ -290,9 +299,8 @@ header {
 	float: left;
 	font-family: 'Droid', sans-serif;
 	margin-bottom: 0;
-	margin-left: 3.06122%;
-	margin-right: 3.06122%;
-	margin-top: 0;
+	/*margin-left: 3.06122%;*/
+	/*margin-right: 3.06122%;*/
 	max-width: 93.87755%;
 }
 #front-page-content {
@@ -365,9 +373,9 @@ aside {
 /*primary sidebar styles*/
 #primary, #secondary, #impressions {
 }
-aside h3 { 
+aside h3 {
 	border-bottom: 3px solid #b7b47d;
-	color: #726244; 
+	color: #726244;
 	font-size: 1.188em;
 	font-weight: bold;
 	line-height: 1.188em;
@@ -456,10 +464,11 @@ footer {
 	background-color: #F9F9CF;
 	clear: both;
 	color: #000;
-	float: left;
 	font-size: 1em;
-		margin: 15px 0 0 0;
+	padding:20px;
+	margin: 15px 0 0 0;
 	max-width: 100%;
+	overflow:hidden;
 }
 footer ul {
   	width: auto;
@@ -469,16 +478,18 @@ footer ul li {
 	line-height: 1.5;
 	list-style-type: none;
 	float: left;
-	font-size: .750em;
+	font-size: 1em;
 	font-weight: bold;
 	width: 100%;
 }
 footer ul li a {
+	font-family: 'Libre Baskerville', serif;
 	font-size: .875em;
 	font-weight: bold;
 }
 footer a:hover, footer a:focus {
-	border-bottom: 1px solid #939393;
+	border-bottom: 1px solid #494949;
+	color: #494949;
 }
 footer p a:hover, footer p a:focus {
 	border-bottom: none !important;
@@ -486,17 +497,17 @@ footer p a:hover, footer p a:focus {
 #footer-left{
 	float: left;
 	font-size: .75em;
-	padding: 70px 0 20px 15px;
 	width: 35%;
 }
 #footer-middle-left {
 	float: left;
 	padding-right: 2%;
+	margin-left: 5%;
 	width: 15%;
 }
 #footer-middle-left, #footer-middle-right {
 	border-left: 2px solid black;
-	margin-top: 2%;
+	/*margin-top: 2%;*/
 }
 #footer-middle-left ul li, #footer-middle-right ul li {
 	display: block;
@@ -509,43 +520,42 @@ footer p a:hover, footer p a:focus {
 }
 #footer-right {
 	float: right;
-	padding-right: 3.06122%;
-	width: 35%;
+	/*padding-right: 3.06122%;*/
+	width: 20%;
 }
 #footer-right img {
 	float: right;
-	height: 100px;
-	width: 100px;
+	/*padding-top:20px;*/
 }
 /*end footer styles*/
-/*  ---------------  BEGIN WORDPRESS-GENERATED SELECTORS  ---------------  */		
-		
+/*  ---------------  BEGIN WORDPRESS-GENERATED SELECTORS  ---------------  */
+
 div.entry {
 	margin-bottom: 20px;
 }
 .wp-caption-text  {
 }
 .alignnone {
-	margin-bottom: 10px; 
+	margin-bottom: 10px;
 }
 .alignleft {	/* applies to floated images */
 	float: left;
-	margin: 0 10px 10px 0px ; 
+	margin: 0 10px 10px 0px ;
 }
 .alignright { 	/* applies to floated images */
 	float: right;
-	margin: 0 0px 10px 10px; 
+	margin: 0 0px 10px 10px;
 }
 .aligncenter {
-	display: block;	
+	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
-#previous_image a, 
+#previous_image a,
 #next_image a {
-	border-bottom: none; 
+	border-bottom: none;
 }
-.attachment-thumbnail, 
+.attachment-thumbnail,
 .size-thumbnail {
 	padding: 5px;
 }
@@ -560,12 +570,12 @@ div.entry {
 }
 #comments-box,
 #respond {
-	clear: both; 	/* clears floated prev/next nav on comments.php template */	
+	clear: both; 	/* clears floated prev/next nav on comments.php template */
 }
 #respond h3{
 	margin-left: 5px;
 }
-	
+
 /* COMMENTS */
 
 #comments-head {
@@ -575,7 +585,7 @@ div.entry {
 #comments-box ul {
 	list-style-type:none;
 	padding-left: 0;
-	margin-left: 0;	
+	margin-left: 0;
 }
 #comments-box ol li {
 	margin: 10px 0;
@@ -602,7 +612,7 @@ div.entry {
 	float: left;
 	margin: 0 10px 10px 0;
 }
-					
+
 /* POST ITEMS */
 .post-box {
 	border-bottom:1px solid #DDDDDD;
@@ -617,48 +627,48 @@ div.entry {
 }
 
 .sticky {
-	
+
 }
 
 .bypostauthor {
-	
+
 }
 
 .read-more {
-	font-style: italic;	
+	font-style: italic;
 }
 
 /* GALLERY ITEMS */
 .gallery {
 	margin: auto;
 }
-	
+
 .gallery-item {
 	float: left;
 	margin: 5px 3px 5px 0;
 	text-align: center;
 }
-	
-#content p.smallattachment a, 
+
+#content p.smallattachment a,
 #content dl.gallery-item a {
 	border-bottom: none;
 }
-	
+
 #gallery-box img {
 	height: 400px;
 	width: 780px;
 }
-	
+
 .gallery-caption {
 	margin-left: 0;
 }
-	
+
 #content p.wp-caption-text {
 	margin-top: 10px;
 	font-size: 12px;
 }
-		
-/*  ---------------  END WORDPRESS-GENERATED SELECTORS  ---------------  */		
+
+/*  ---------------  END WORDPRESS-GENERATED SELECTORS  ---------------  */
 /* ----------------  BEGIN RESPONSIVE CSS -----------------------------  */
 @media screen and (min-width: 1200px) {
 	#navigation > ul li#responsive-tab {
