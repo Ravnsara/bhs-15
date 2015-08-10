@@ -6,7 +6,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=1.0" />
 <meta name="robots" content="no index, no follow" />
-<meta name="author" content="nicole warnemuende" />s
+<meta name="author" content="nicole warnemuende" />
 <!--end meta-->
 
 <!-- Remy Sharp Shim --> 
