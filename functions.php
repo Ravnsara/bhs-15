@@ -48,7 +48,10 @@ if ( function_exists( 'register_nav_menus' ) ) {
 		array(
 		  'main-menu' => 'Main Menu',
 		  'footer-menu-1' => 'Footer Menu 1',
-		  'footer-menu-2' => 'Footer Menu 2'
+		  'footer-menu-2' => 'Footer Menu 2',
+		  'western-wa' => 'Western WA',
+		  'central-wa' => 'Central WA',
+		  'eastern-wa' => 'Eastern WA'
 		)
 	);
 } 
