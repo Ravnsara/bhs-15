@@ -3,13 +3,7 @@
 			<?php if(is_front_page()) : ?>
 
 			<!--start flexslider-->
-			<div class="flexslider">
-				<ul class="slides">
-					<li><img src="<?php bloginfo('template_url');?>/images/Slide1.jpg"></li>
-					<li><img src="<?php bloginfo('template_url');?>/images/Slide2.jpg"></li>
-					<li><img src="<?php bloginfo('template_url');?>/images/Slide3.jpg"></li>
-				</ul>
-			</div>
+			<?php echo add_flexslider(); ?>
 			<!--end flexslider-->
 			
 			<!--start sidebar-->

@@ -13,14 +13,12 @@ add_theme_support( 'html5', $args );
 // add RSS feed links to <head> tag
 add_theme_support( 'automatic-feed-links' );
 
-/*nicole's additions*/
 //adds feature image option
 add_theme_support( 'post-thumbnails' ); 
 
 add_image_size( 'feature-image', 610, 380 );
 add_image_size( 'bhs-logo', 183, 182 );
 
-/*nicole's additions*/
 
 //for security, hide wp version in web pages and feeds
 function remove_version_info() {
@@ -61,7 +59,6 @@ add_action( 'widgets_init', 'my_register_sidebars' );
 
 function my_register_sidebars() {
 
-	/* Register the primary sidebar. */
 	register_sidebar(
 		array(
 			'id' => 'primary',
@@ -107,16 +104,18 @@ function choose_sidebar() {
 		get_sidebar( 'primary' );
 	}
 }
+
+
 // Remove rel attribute from the category list
 function remove_category_list_rel($output)
 {
   $output = str_replace(' rel="category tag"', '', $output);
   return $output;
 }
+
 add_filter('wp_list_categories', 'remove_category_list_rel');
 add_filter('the_category', 'remove_category_list_rel');
 
-/*nicole's additions*/
 //sets custom excerpt length
 function custom_excerpt_length( $length ) {
 	return 25;
@@ -162,3 +161,40 @@ function get_children_pages() {
 	// reset query
 	wp_reset_query();
 }
+
+// Add a Flexslider Gallery	
+function add_flexslider() {
+	
+	global $post; // don't forget to make this a global variable inside your function
+
+	$attachments = get_children(array(
+		'post_parent' => $post->ID, 
+		'order' => 'ASC', 
+		'orderby' => 'menu_order',  
+		'post_type' => 'attachment', 
+		'post_mime_type' => 'image', 
+	));
+
+	if ($attachments) { // see if there are images attached to posting
+		$flexslider = "";
+
+		$flexslider = '<div class="flexslider">';
+		$flexslider .= '<ul class="slides">';
+		
+		foreach ( $attachments as $attachment_id => $attachment ) { // create the list items for images with captions
+
+			$flexslider .= '<li>';
+			$flexslider .= wp_get_attachment_image($attachment_id, 'full'); // get image size large
+			$flexslider .= '<span class="description">';
+			$flexslider .= get_post_field('post_content', $attachment->ID); // get image description field
+			$flexslider .= '</span>';
+			$flexslider .= '</li>';
+		}
+
+		$flexslider .= '</ul>';
+		$flexslider .= '</div>';
+
+		return $flexslider;
+} // end see if images attachmed
+
+} 
