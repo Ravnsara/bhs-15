@@ -25,10 +25,6 @@ a {
 }
 /*end resets*/
 /*standard styles*/
-
-
-
-
 small, .font_small {font-size: 0.889em;}
 
 html {
@@ -49,9 +45,9 @@ p {
 }
 h1, h2, h3, h4, h5, h6 {
 	color: #5B4131;
-  margin-bottom: 0.5em;
-  font-weight: bold;
-  line-height: 1.2;
+  	margin-bottom: 0.5em;
+  	font-weight: bold;
+  	line-height: 1.2;
 }
 /*h1{
   	margin-top: 0;
@@ -193,7 +189,7 @@ header {
 	font-family: 'Libre Baskerville', serif;
 	font-size: .95em;
 	padding-right: 15px;
-  max-width: 100%;
+  	max-width: 100%;
 }
 
 #navigation a.hover, #navigation a.focus, #navigation a.current_page {
@@ -212,7 +208,7 @@ header {
 	text-align: right;
 }
 #navigation ul li{
-  display: inline-block;
+  	display: inline-block;
 	list-style-type: none;
 	line-height: 50px;
 	text-align: right;
@@ -231,10 +227,10 @@ header {
 }
 	/*css menu selectors*/
 	#navigation > ul li.right {
-		  float: right;
+		float: right;
 	}
 	#navigation > ul li.has-sub {
-	  position: relative;
+	 	position: relative;
 		z-index: 11;
 	}
 	#navigation > ul li.has-sub:hover ul {
@@ -242,7 +238,7 @@ header {
 	}
 	#navigation > ul li.has-sub ul {
 	  	background: #58581F;
-		 	border-top: 0 none;
+		border-top: 0 none;
 		display: none;
    		list-style-type: none;
  		position: absolute;
@@ -272,13 +268,14 @@ header {
 	}
 	/*end css menu selectors*/
 /*end nav styles*/
+
 /*start header bar*/
 #header-bar {
 	background-color: #828248;
 	height: 20px;
 	max-width: 980px;
 }
-/*end header image bar*/
+/*end header bar*/
 /*end header styles*/
 
 /*content styles*/
@@ -313,7 +310,6 @@ header {
 	margin-top: 25px;
 	max-width: 62.24489%;
 }
-
 .flexslider {
 	float: left;
 	margin-top: 25px;
@@ -347,9 +343,8 @@ header {
 	padding: 4px;
 }
 #accordion ul li{
-
+	margin-left: 3%;
 }
-
 /*end accordion styles*/
 
 /*sidebar panel styles*/
@@ -360,6 +355,7 @@ aside {
 	max-width: 29.59183%;
 }
 /*primary sidebar styles*/
+
 #primary, #secondary, #impressions {
 }
 aside h3 {
@@ -386,17 +382,15 @@ aside p {
 	margin-left: 0;
 }
 #widgets {
-overflow: hidden;
+	overflow: hidden;
 }
-
 #widgets section.widget-item {
-width: 300px;
-float: left;
-margin-right: 20px;
+	width: 300px;
+	float: left;
+	margin-right: 20px;
 }
-
 #widgets section.widget-item:last-child {
-margin-right: 0px;
+	margin-right: 0px;
 }
 .widget {
 	float: left;
@@ -509,16 +503,14 @@ footer p a:hover, footer p a:focus {
 }
 #footer-right {
 	float: right;
-	/*padding-right: 3.06122%;*/
 	width: 20%;
 }
 #footer-right img {
 	float: right;
-	/*padding-top:20px;*/
 }
 /*end footer styles*/
-/*  ---------------  BEGIN WORDPRESS-GENERATED SELECTORS  ---------------  */
 
+/*  ---------------  BEGIN WORDPRESS-GENERATED SELECTORS  ---------------  */
 div.entry {
 	margin-bottom: 20px;
 }
@@ -608,55 +600,44 @@ div.entry {
 	margin-bottom:30px;
 	padding-bottom:10px;
 }
-
 .postmetadata {
 	float: left;
 	font-style:italic;
 	width: 460px;
 }
-
 .sticky {
 
 }
-
 .bypostauthor {
 
 }
-
 .read-more {
 	font-style: italic;
 }
-
 /* GALLERY ITEMS */
 .gallery {
 	margin: auto;
 }
-
 .gallery-item {
 	float: left;
 	margin: 5px 3px 5px 0;
 	text-align: center;
 }
-
 #content p.smallattachment a,
 #content dl.gallery-item a {
 	border-bottom: none;
 }
-
 #gallery-box img {
 	height: 400px;
 	width: 780px;
 }
-
 .gallery-caption {
 	margin-left: 0;
 }
-
 #content p.wp-caption-text {
 	margin-top: 10px;
 	font-size: 12px;
 }
-
 /*  ---------------  END WORDPRESS-GENERATED SELECTORS  ---------------  */
 /* ----------------  BEGIN RESPONSIVE CSS -----------------------------  */
 @media screen and (min-width: 1200px) {
@@ -733,7 +714,6 @@ div.entry {
 	  #navigation > ul li.has-sub > a {
 	    background-image: none;
 	  }
-
 	.flexslider, .flexslider img {
 		margin-left: 0;
 		max-width: 100%;
