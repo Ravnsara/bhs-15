@@ -641,6 +641,9 @@ div.entry {
 .ai1ec-day {
 	background-color:white;
 }
+.ai1ec-weekday {
+	background-color:#f9f9cf;
+}
 /*  ---------------  END WORDPRESS-GENERATED SELECTORS  ---------------  */
 /* ----------------  BEGIN RESPONSIVE CSS -----------------------------  */
 @media screen and (min-width: 1200px) {
