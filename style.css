@@ -638,6 +638,9 @@ div.entry {
 	margin-top: 10px;
 	font-size: 12px;
 }
+.ai1ec-day {
+	background-color:white;
+}
 /*  ---------------  END WORDPRESS-GENERATED SELECTORS  ---------------  */
 /* ----------------  BEGIN RESPONSIVE CSS -----------------------------  */
 @media screen and (min-width: 1200px) {
