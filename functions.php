@@ -92,41 +92,33 @@ function my_register_sidebars() {
 	/* Repeat register_sidebar() code for additional sidebars. */
 }
 
-function get_ID_by_slug($page_slug) {
 
-	//get the path of the page with this slug
-	$page = get_page_by_path($page_slug);
-	
-	//if page is not null return the page ID
-	if($page) {
-		return $page->ID;
-	} else {
-		return null;
-	}
-}
+/*
+* if there is a parent 
+* get the post name of the parent page
+*/
+function get_parent_title(){
 
-function is_tree($pid) {
-	
 	global $post;
-	
-	//get the page id for the page with this slug
-	$pid = get_ID_by_slug($pid);
-	
-	//if it is a page and the page id = the page ID of the parent or the page matches what we want
-	if( is_page() && ($post->post_parent==$pid || is_page($pid) ) ){
-		return true;
+
+	//$theTitle = empty( $post->post_parent ) ? get_the_title( $post->ID ) : get_the_title( $post->post_parent );
+	if(empty($post->post_parent)){
+		$theTitle = get_the_title($post->ID);
 	} else {
-		return false;
+		$theTitle = get_the_title($post->post_parent);
 	}
+	return $theTitle;
 }
 
 //set sidebar based on page
 function choose_sidebar() {
 
+	$theParent = get_parent_title();
+
 	if( is_page( 'about' )){ 
 		get_sidebar( 'secondary' );
 	} 
-	elseif ( is_tree( 'impressions') ){
+	elseif ( is_page('Impressions') || $theParent == 'Impressions' ){
 		get_sidebar( 'impressions' );
 	}
 	else {

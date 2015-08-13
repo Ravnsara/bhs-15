@@ -117,8 +117,7 @@ strong {
 #outer-header {
 	background-color: #F9F9CF;
 	height: 150px;
-	max-width: 100%;
-	
+	min-width: 100%;
 }
 header {
 	background-color: #F9F9CF;
@@ -136,14 +135,11 @@ header {
 	top: 10px;
 	z-index: 3;
 }
-#logo a:hover {
-}
 #social {
 	float: right;
 	padding-top: 20px;
 	margin-right: 15px;
 }
-/*not sure what do do with this*/
 #header-right {
 	float: right;
 	height: 100%;
@@ -153,27 +149,27 @@ header {
 	right: 275px;
 	top: 11px;
 }
-#search {
+#header-search {
 	float: right;
 	margin-top: 100px;
 }
-#search input {
+#header-search input {
 	height: 30px;
-	max-width: 200px;
+	width: 150px;
 }
-.search-form label span {
+#header-search .search-form label span {
 	display: none;
 }
-.search-submit {
+#header-search .search-submit {
 	height: 30px;
-	max-width: 100px !important;
+	width: 50px !important;
 }
 /*end header styles*/
 
 /*nav styles*/
 #outer-nav {
 	background-color: #58581F;
-  	max-width: 100%;
+  	width: 100%;
 }
 #navigation {
 	background-color: #58581F;
@@ -181,7 +177,7 @@ header {
 	font-size: .95em;
 	margin: 0 auto;
 	padding-right: 15px;
-  	width: 980px;
+  	max-width: 980px;
 }
 
 #navigation a.hover, #navigation a.focus, #navigation a.current_page {
@@ -267,7 +263,7 @@ header {
 	background-color: #828248;
 	clear: both;
 	height: 20px;     
-	max-width: 100%;
+	width: 100%;
 }
 /*end header bar*/
 /*end header styles*/
@@ -278,16 +274,14 @@ header {
 	clear: both;
 	height: 15px;
 	margin: 0 auto;
-	max-width: 980px;
+	width: 100%;
 }
 #main-outside {
 	background-color: #828248;
 	clear: both;
 	overflow: hidden;
-	/*padding-left:3.06122%;*/
 	padding-left:7.14285%;
 	padding-right:7.14285%;
-	/*padding-right:3.06122%;*/
 	margin: 0 auto;
 	width: 980px;
 }
@@ -300,7 +294,6 @@ header {
 }
 #front-page-content {
 	margin-top: 25px;
-	/*max-width: 62.24489%;*/
 	width: 65.07857%;
 }
 #front-page-content a, 
@@ -312,7 +305,6 @@ header {
 #page-content {
 	float: left;
 	margin-top: 25px;
-	/*max-width: 62.24489%;*/
 	width: 65.07857%;
 }
 .flexslider {
@@ -351,7 +343,6 @@ aside {
 	float: right;
 	height: 100%;
 	margin-top: 25px;
-	/*max-width: 29.59183%;*/
 	width: 32.53928%;
 }
 /*primary sidebar styles*/
@@ -395,7 +386,7 @@ aside p {
 .widget {
 	float: left;
 	margin-bottom: 20px;
-	max-width: 100% !important;
+	width: 100% !important;
 }
 .widget ul li {
 	list-style-type: none;
@@ -422,7 +413,7 @@ aside p {
 	clear: both;
 	float: left;
 	margin-bottom: 20px;
-	max-width: 75%;
+	width: 75%;
 }
 .index-latest-blog-title {
 	color: #555555;
@@ -438,7 +429,7 @@ aside p {
 	padding-top: 12px;
 	font-size: 1em;
 	float: right;
-	max-width: 82%;
+	width: 82%;
 }
 /*end index styles*/
 
@@ -650,6 +641,14 @@ div.entry {
 	#f9f9cf;
 }
 /*  ---------------  END WORDPRESS-GENERATED SELECTORS  ---------------  */
+
+/*  ---------------  BEGIN CONTACT FORM 7 SELECTORS -------------------  */
+.first-name input, .last-name input {
+	height: 25px;
+	width: 40%;
+}
+/*  ---------------  END CONTACT FORM 7 SELECTORS -------------------  */
+
 /* ----------------  BEGIN RESPONSIVE CSS -----------------------------  */
 @media screen and (min-width: 1200px) {
 	#navigation > ul li#responsive-tab {
@@ -675,15 +674,6 @@ div.entry {
 	img {
 		max-width: 100%;
 		max-height: 100%;
-	}
-	#wrapper {
-		max-width: 100%;
-	}
-	#header {
-		max-width: 100%;
-	}
-	#header-img {
-		display: none;
 	}
 	#navigation > ul {
     	width: 100%;
@@ -727,21 +717,21 @@ div.entry {
 	  }
 	.flexslider, .flexslider img {
 		margin-left: 0;
-		max-width: 100%;
+		width: 100%;
 	}
 	#main {
 		margin-top: 25px;
-		max-width: 100%;
+		width: 100%;
 	}
 	#front-page-content, #page-content {
-		max-width: 100%;
+		width: 100%;
 	}
 	aside {
 		clear: both;
 		float: left;
 		padding-left: 2.08%;
 		padding-right: 1.04%;
-		max-width: 100%
+		width: 100%
 	}
 	aside ul li {
 		list-style-type: none;
@@ -749,7 +739,7 @@ div.entry {
 		padding-bottom: 10px;
 	}
   	footer {
-  		max-width: 100%;
+  		width: 100%;
   	}
   	footer ul li {
   		display: block;

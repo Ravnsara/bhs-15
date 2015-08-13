@@ -46,7 +46,7 @@
 					<img src="<?php bloginfo('template_url');?>/images/fb-logo.png" alt="facebook logo" ?>
 				</div><!--end social-->
 
-				<div id="search">
+				<div id="header-search">
 					<?php get_search_form(); ?>
 				</div><!--end search-->
 
