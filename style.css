@@ -49,38 +49,15 @@ h1, h2, h3, h4, h5, h6 {
   	font-weight: bold;
   	line-height: 1.2;
 }
-/*h1{
-  	margin-top: 0;
-  	font-size: 2em;
-	line-height: 100%;
-}
-h2{
-	font-size: 1.5em;
-	line-height: 100%;
-
-}
-h3{
-	font-size: 1.266em;
-	font-size: 1.188em;
-	line-height: 100%;
-}
-h4{
-	font-size: 1em;
-	line-height: 100%;*/
-
-
-}
 ul {
 	font-size: 1em;
 	line-height: 150%;
-	margin-left:1.25em;
-	/*margin-bottom: 8px;*/
 }
 ul li {
 	list-style-type: disc;
+	margin-left: 1.25em;
 	color: #494949;
-	/*margin-left: 2.7%;*/
-	/*margin-bottom: 4px;*/
+	margin-bottom: 4px;
 }
 ol {
 	margin-left:1.75em;
@@ -90,7 +67,7 @@ ol {
 	margin-bottom: 8px;*/
 }
 ol li {
-	/*font-size: 16px;/*should be the same size as p*/
+	margin-left:1.75em;
 	/*margin-bottom: 4px;
 	margin-left: 28px;*/
 }
@@ -131,12 +108,23 @@ strong {
 }
 /*end standard styles*/
 
+#outside {
+	background-color: #fff;
+	width: 100%;
+}
+
 /*header styles*/
+#outer-header {
+	background-color: #F9F9CF;
+	height: 150px;
+	max-width: 100%;
+	
+}
 header {
 	background-color: #F9F9CF;
 	height: 150px;
-	margin-top: 2px;
-	max-width: 100%;
+	margin: 0 auto;
+	max-width: 980px;
 	position: relative;
 }
 #logo {
@@ -183,13 +171,17 @@ header {
 /*end header styles*/
 
 /*nav styles*/
+#outer-nav {
+	background-color: #58581F;
+  	max-width: 100%;
+}
 #navigation {
 	background-color: #58581F;
-	clear: both;
 	font-family: 'Libre Baskerville', serif;
 	font-size: .95em;
+	margin: 0 auto;
 	padding-right: 15px;
-  	max-width: 100%;
+  	width: 980px;
 }
 
 #navigation a.hover, #navigation a.focus, #navigation a.current_page {
@@ -211,12 +203,13 @@ header {
   	display: inline-block;
 	list-style-type: none;
 	line-height: 50px;
+	margin:0 !important;
 	text-align: right;
 	width: auto;
 	padding-left: 15px;
 }
-#navigation a {
-	color:white;
+#navigation a, #navigation a:visited {
+	color:#fff;
 	font-weight: bold;
 }
 #navigation li.current_page_item a {
@@ -272,16 +265,18 @@ header {
 /*start header bar*/
 #header-bar {
 	background-color: #828248;
-	height: 20px;
-	max-width: 980px;
+	clear: both;
+	height: 20px;     
+	max-width: 100%;
 }
 /*end header bar*/
 /*end header styles*/
 
 /*content styles*/
-#wrapper {
+#high-bar, #low-bar {
 	border-color: #fff;
 	clear: both;
+	height: 15px;
 	margin: 0 auto;
 	max-width: 980px;
 }
@@ -289,10 +284,12 @@ header {
 	background-color: #828248;
 	clear: both;
 	overflow: hidden;
-	padding-left:3.06122%;
-	padding-right:3.06122%;
-	margin-top: 15px;
-	max-width: 980px;
+	/*padding-left:3.06122%;*/
+	padding-left:7.14285%;
+	padding-right:7.14285%;
+	/*padding-right:3.06122%;*/
+	margin: 0 auto;
+	width: 980px;
 }
 #main-inside {
 	background-color: rgba(255, 255, 255, 0.5);
@@ -303,18 +300,26 @@ header {
 }
 #front-page-content {
 	margin-top: 25px;
-	max-width: 62.24489%;
+	/*max-width: 62.24489%;*/
+	width: 65.07857%;
+}
+#front-page-content a, 
+#front-page-content a:visited,
+#page-content a, 
+#page-content a:visited {
+	color: #5b4131 !important;
 }
 #page-content {
 	float: left;
 	margin-top: 25px;
-	max-width: 62.24489%;
+	/*max-width: 62.24489%;*/
+	width: 65.07857%;
 }
 .flexslider {
 	float: left;
 	margin-top: 25px;
 	height: 380px;
-	max-width: 62.24489%;
+	width: 65.07857%;
 }
 .flexslider li {
 	text-decoration: none !important;
@@ -339,12 +344,6 @@ header {
 	padding: 0;
 	width: 97%;
 }
-#accordion ul {
-	padding: 4px;
-}
-#accordion ul li{
-	margin-left: 3%;
-}
 /*end accordion styles*/
 
 /*sidebar panel styles*/
@@ -352,7 +351,8 @@ aside {
 	float: right;
 	height: 100%;
 	margin-top: 25px;
-	max-width: 29.59183%;
+	/*max-width: 29.59183%;*/
+	width: 32.53928%;
 }
 /*primary sidebar styles*/
 
@@ -395,7 +395,7 @@ aside p {
 .widget {
 	float: left;
 	margin-bottom: 20px;
-	width: 90%
+	max-width: 100% !important;
 }
 .widget ul li {
 	list-style-type: none;
@@ -443,14 +443,16 @@ aside p {
 /*end index styles*/
 
 /*footer styles*/
+#outer-footer {
+	background-color: #F9F9CF;
+}
 footer {
 	background-color: #F9F9CF;
-	clear: both;
 	color: #000;
 	font-size: 1em;
+	margin: 0 auto;
 	padding:20px;
-	margin: 15px 0 0 0;
-	max-width: 100%;
+	width: 980px;
 	overflow:hidden;
 }
 footer ul {
