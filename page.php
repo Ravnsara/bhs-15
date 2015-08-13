@@ -11,12 +11,19 @@
 
 				<?php endwhile; endif; ?>  
 
-				<?php get_children_pages(); ?>
-
+				<?php if( is_page(array( 'get-involved', 'projects' ))){
+					get_children_pages();
+				}; ?>
 			</div><!--end page-content-->
+
+
+			<!--?php //resets global variables
+				wp_reset_query(); ?-->
+
 			<!--start sidebar-->
 			<?php choose_sidebar(); ?>
 			<!--end sidebar-->
+
 		</div><!--end main-inside-->	
 	</div><!--end main-outside-->
 	

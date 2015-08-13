@@ -31,40 +31,48 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<div id="wrapper">
-	<header>
-		<div id="logo">
-			<a href="<?php echo esc_url(home_url());?>">
-				<img src="<?php bloginfo('template_url');?>/images/BHSwa-logo-round.png" alt="<?php bloginfo('name'); ?>">
-			</a>
-		</div><!--end logo-->
+	<div id="outer-header">
+		<header>
+			<div id="logo">
+				<a href="<?php echo esc_url(home_url());?>">
+					<img src="<?php bloginfo('template_url');?>/images/BHSwa-logo-round.png" alt="<?php bloginfo('name'); ?>">
+				</a>
+			</div><!--end logo-->
 
-		<div id="header-right">
-			<div id="header-img"><img src="<?php bloginfo('template_url');?>/images/Sojourner_Truth_Home_Final.png" alt="Sojourner Truth Home" ?></div>
+			<div id="header-right">
+				<div id="header-img"><img src="<?php bloginfo('template_url');?>/images/Sojourner_Truth_Home_Final.png" alt="Sojourner Truth Home" ?></div>
 
-			<div id="social">
-				<img src="<?php bloginfo('template_url');?>/images/fb-logo.png" alt="facebook logo" ?>
-			</div><!--end social-->
+				<div id="social">
+					<img src="<?php bloginfo('template_url');?>/images/fb-logo.png" alt="facebook logo" ?>
+				</div><!--end social-->
 
-			<div id="search">
-				<?php get_search_form(); ?>
-			</div><!--end search-->
+				<div id="search">
+					<?php get_search_form(); ?>
+				</div><!--end search-->
 
-		</div><!--end header-right-->
-	</header>
+			</div><!--end header-right-->
+		</header>
+	</div><!--end outer-header-->
 
 	<div id="header-bar"><!--adds color bar to complete header image-->
 	</div>	
 	
-	<div id="navigation">
-		<?php wp_nav_menu( array( 
-			'theme_location' => 'main-menu' ,
-			'menu' => 'Main Menu' ,
-			'container'  => 'ul', 
-			'link_before' => '<span>',
-			'link_after' => '</span>',
-		) ); ?>
-	</div><!--end navigation-->
+	<div id="outer-nav">
+		<div id="navigation">
+			<?php wp_nav_menu( array( 
+				'theme_location' => 'main-menu' ,
+				'menu' => 'Main Menu' ,
+				'container'  => 'ul', 
+				'link_before' => '<span>',
+				'link_after' => '</span>',
+			) ); ?>
+		</div><!--end navigation-->
+	</div><!--end outer-nav-->
+
+	<div id="high-bar">
+	</div><!--end high-bar-->
+
+	<div id="outside">
 
 	<!--start main-outside-->
 	<div id="main-outside">

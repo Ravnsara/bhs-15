@@ -92,19 +92,47 @@ function my_register_sidebars() {
 	/* Repeat register_sidebar() code for additional sidebars. */
 }
 
+function get_ID_by_slug($page_slug) {
+
+	//get the path of the page with this slug
+	$page = get_page_by_path($page_slug);
+	
+	//if page is not null return the page ID
+	if($page) {
+		return $page->ID;
+	} else {
+		return null;
+	}
+}
+
+function is_tree($pid) {
+	
+	global $post;
+	
+	//get the page id for the page with this slug
+	$pid = get_ID_by_slug($pid);
+	
+	//if it is a page and the page id = the page ID of the parent or the page matches what we want
+	if( is_page() && ($post->post_parent==$pid || is_page($pid) ) ){
+		return true;
+	} else {
+		return false;
+	}
+}
+
 //set sidebar based on page
 function choose_sidebar() {
-	if(is_page( 'about' )){ 
+
+	if( is_page( 'about' )){ 
 		get_sidebar( 'secondary' );
 	} 
-	elseif (is_page( 'impressions' )){ 
+	elseif ( is_tree( 'impressions') ){
 		get_sidebar( 'impressions' );
-	} 
+	}
 	else {
 		get_sidebar( 'primary' );
 	}
 }
-
 
 // Remove rel attribute from the category list
 function remove_category_list_rel($output)
