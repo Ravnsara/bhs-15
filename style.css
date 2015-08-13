@@ -644,7 +644,10 @@ div.entry {
 	background-color:white;
 }
 .ai1ec-weekday {
-	background-color:#f9f9cf;
+	background-color:#b7b47d;
+}
+.ai1ec-event {
+	#f9f9cf;
 }
 /*  ---------------  END WORDPRESS-GENERATED SELECTORS  ---------------  */
 /* ----------------  BEGIN RESPONSIVE CSS -----------------------------  */
