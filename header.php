@@ -46,9 +46,9 @@
 					<img src="<?php bloginfo('template_url');?>/images/fb-logo.png" alt="facebook logo" ?>
 				</div><!--end social-->
 
-				<div id="header-search">
+				<!--start search-->
 					<?php get_search_form(); ?>
-				</div><!--end search-->
+				<!--end search-->
 
 			</div><!--end header-right-->
 		</header>
@@ -72,6 +72,7 @@
 	<div id="high-bar">
 	</div><!--end high-bar-->
 
+	<!--start outside-->
 	<div id="outside">
 
 	<!--start main-outside-->

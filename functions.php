@@ -92,7 +92,6 @@ function my_register_sidebars() {
 	/* Repeat register_sidebar() code for additional sidebars. */
 }
 
-
 /*
 * if there is a parent 
 * get the post name of the parent page

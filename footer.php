@@ -5,11 +5,13 @@
 	</div><!--end low-bar-->
 	
 	<div id="outer-footer">
+
 		<footer>
+
 			<div id="footer-left" class="footer-div">
 
-					<p>The Black Heritage Society is a<br> 501(c)(3) non-profit organization</p>
-					<p><strong><?php print ("&copy; " . date ('Y') . " "); ?> The Black Heritage Society of Washington State</strong></p>
+				<p>The Black Heritage Society is a<br> 501(c)(3) non-profit organization</p>
+				<p><strong><?php print ("&copy; " . date ('Y') . " "); ?> The Black Heritage Society of Washington State</strong></p>
 
 			</div><!--end footer-left-->
 
@@ -40,6 +42,7 @@
 			</div><!--end footer-right-->
 
 		</footer>
+
 	</div><!--outer footer-->
 
 	<?php wp_footer(); ?>

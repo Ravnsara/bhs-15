@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 <!--begin main-->
+		<div id="full-content">
+
 			<div id="page-content">
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -17,9 +19,11 @@
 
 			</div><!--end page-content-->
 
-			<!--start sidebar-->
-			<?php choose_sidebar(); ?>
-			<!--end sidebar-->
+		</div><!--end full-content-->
+
+		<!--start sidebar-->
+		<?php choose_sidebar(); ?>
+		<!--end sidebar-->
 
 		</div><!--end main-inside-->	
 	</div><!--end main-outside-->
