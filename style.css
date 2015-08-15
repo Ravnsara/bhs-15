@@ -87,10 +87,10 @@ a{
 	text-decoration: none;
 }
 a:link {
-	color: black;
+	color: #494949;
 }
 a:visited {
-	color: black;
+	color: #494949;
 	text-decoration: none;
 }
 a:hover, a:focus {
@@ -197,7 +197,7 @@ header {
 	list-style-type: none;
 	width: auto;
 	margin: 0;
-	padding: 0;	
+	padding: 0;
 	/*css menu styling*/
 	text-align: right;
 }
@@ -274,7 +274,7 @@ header {
 #header-bar {
 	background-color: #828248;
 	clear: both;
-	height: 20px;     
+	height: 20px;
 	width: 100%;
 }
 /*end header bar*/
@@ -302,7 +302,7 @@ header {
 	clear: both;
 	overflow: hidden;
 	font-family: 'Droid Sans', sans-serif;
-	padding:0px 10px;
+	padding:10px 10px 0px 10px;
 }
 #full-content {
 	float: left;
@@ -314,9 +314,9 @@ header {
 #front-page-content {
 	width: 100%;
 }
-#front-page-content a, 
+#front-page-content a,
 #front-page-content a:visited,
-#page-content a, 
+#page-content a,
 #page-content a:visited {
 	color: #5b4131 !important;
 }
@@ -346,9 +346,9 @@ header {
 	width: 97%;
 }
 .accordion-content {
-	border: 1px solid black;
+	border: 1px solid #494949;
 	margin: 0;
-	padding: 0;
+	padding: 0 5px;
 	width: 97%;
 }
 /*end accordion styles*/
@@ -475,17 +475,15 @@ footer ul li {
 	width: 100%;
 }
 footer ul li a {
-	font-family: 'Libre Baskerville', serif;
-	font-size: .875em;
+	font-family:"Droid Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #494949;
+	font-size: 1em;
 	font-weight: bold;
 }
 footer a:hover, footer a:focus {
-	border-bottom: 1px solid #494949;
-	color: #494949;
+	color: black;
 }
-footer p a:hover, footer p a:focus {
-	border-bottom: none !important;
-}
+
 #footer-left{
 	float: left;
 	font-size: .75em;
@@ -498,13 +496,10 @@ footer p a:hover, footer p a:focus {
 	width: 15%;
 }
 #footer-middle-left, #footer-middle-right {
-	border-left: 2px solid black;
-	/*margin-top: 2%;*/
+	border-left: 2px solid #494949;
 }
 #footer-middle-left ul li, #footer-middle-right ul li {
 	display: block;
-	padding-left: 1%;
-	padding-right: 1%;
 }
 #footer-middle-right {
 	float: left;
