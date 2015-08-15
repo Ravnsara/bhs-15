@@ -43,7 +43,7 @@
 				<div id="header-img"><img src="<?php bloginfo('template_url');?>/images/Sojourner_Truth_Home_Final.png" alt="Sojourner Truth Home" ?></div>
 
 				<div id="social">
-					<img src="<?php bloginfo('template_url');?>/images/fb-logo.png" alt="facebook logo" ?>
+					<a href="https://www.facebook.com/pages/The-Black-Heritage-Society-of-Washington-State/121449081223168" target="_blank"><img src="<?php bloginfo('template_url');?>/images/fb-logo.png" alt="facebook logo" ?></a>
 				</div><!--end social-->
 
 				<!--start search-->
