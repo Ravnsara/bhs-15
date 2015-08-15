@@ -24,9 +24,9 @@ a img {
 a {
 	text-decoration: none;
 }
-/*  ------  END RESETS  ---------------------------  */
+/*  ------  END RESETS  -----------------------------  */
 
-/*  ------  STANDARD STYLES  ----------------------  */
+/*  ------  STANDARD STYLES  ------------------------  */
 small, .font_small {font-size: 0.889em;}
 
 html {
@@ -37,30 +37,31 @@ html {
 body {
 	font-family:"Droid Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 100%;
-	line-height: 150%;
+	line-height: 1.44;
 }
 p {
 	font-family:"Droid Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 1em;
 	color: #494949;
-	line-height: 1.66;
+	line-height: 1.44;
 	margin-bottom: 1.3em;
 }
 h1, h2, h3, h4, h5, h6 {
 	color: #5B4131;
   	margin-bottom: 0.5em;
   	font-weight: bold;
-  	line-height: 125% !important;
+  	line-height: 1.5 !important;
 }
 ul {
 	font-size: 1em;
 	line-height: 150%;
 }
 ul li {
-	list-style-type: disc;
-	margin-left: 1.25em;
 	color: #494949;
-	margin-bottom: 4px;
+	list-style-type: disc;
+	margin-bottom: 8px;
+	margin-left: 1.25em;
+	padding-right: .5em;	
 }
 ol {
 	margin-left:1.75em;
@@ -109,15 +110,15 @@ blockquote {
 strong {
 	font-weight: bolder;
 }
-/*  ------  END STANDARD SELECTORS  ---------------  */
+/*  ------  END STANDARD SELECTORS  -----------------  */
 
-/*  ------  BEGIN SPECIFIC SELECTORS  -------------  */
+/*  ------  BEGIN SPECIFIC SELECTORS  ---------------  */
 #outside {
 	background-color: #fff;
 	width: 100%;
 }
 
-/*  ------  BEGIN HEADER SELECTORS  --------------  */
+/*  ------  BEGIN HEADER SELECTORS  -----------------  */
 #outer-header {
 	background-color: #F9F9CF;
 	height: 150px;
@@ -153,24 +154,29 @@ header {
 	right: 28.06122%;
 	top: 11px;
 }
-#header-search {
+/*  ------  BEGIN HEADER SEARCH SELECTORS  ----------  */
+header .search-form {
 	float: right;
-	margin-top: 100px;
+	margin-top: 110px;
 }
-#header-search input {
+header .search-form input {
 	height: 30px;
-	width: 150px;
+	line-height: 1.8em;
+	padding: 4px;
+	width: 170px;
 }
-#header .search-form label span {
+header .search-form label span {
 	display: none;
 }
-#header .search-submit {
-	height: 30px;
-	width: 50px !important;
+header .search-submit {
+	display: none;
+	/*height: 30px;
+	width: 50px !important;*/
 }
-/*  ------  END HEADER SELECTORS  -----------------  */
+/*  ------  END HEADER SEARCH SELECTORS  ------------  */
+/*  ------  END HEADER SELECTORS  -------------------  */
 
-/*  ------  BEGIN NAV SELECTORS  ------------------  */
+/*  ------  BEGIN NAV SELECTORS  --------------------  */
 #outer-nav {
 	background-color: #58581F;
   	width: 100%;
@@ -206,7 +212,7 @@ header {
 		/*css menu styling*/
 	text-align: right;
 }
-#navigation > ul li{
+#navigation > ul li {
 		/*css menu styling*/
 	  	display: inline-block;
 	  	*display: inline;
@@ -219,6 +225,7 @@ header {
 	text-align: right;
 	width: auto;
 	padding-left: 15px;
+	padding-right: 0 !important;
 }
 #navigation a, #navigation a:visited {
 	color:#fff;
@@ -231,7 +238,7 @@ header {
 	padding-right: 0;
 }
 
-/*  ------  BEGIN CSS MENU SELECTORS  -------------  */
+/*  ------  BEGIN CSS MENU SELECTORS  ---------------  */
 	#navigation > ul li#responsive-tab {
 		display: none;/*Hide for large screens*/
 	}
@@ -248,8 +255,6 @@ header {
 	}
 	#navigation > ul li.has-sub ul {
 	  	background: #58581F;
-		border: 1px solid #ece6e8;
-  		border-bottom: 3px solid #d9ced2;
   		border-top: 0 none;
 		display: none;
    		list-style-type: none;
@@ -264,13 +269,13 @@ header {
 		text-align: left;/*to align it left instead of right for big nav*/
 	}
 	#navigation > ul li.has-sub > a {
-	  	background-image: url('../images/caret.png');
+	  	background-image: url('images/caret.png');
 	  	background-repeat: no-repeat;
   		background-position: 90% -95%;
 	}
 	#navigation > ul li.has-sub > a.active,
 	#navigation > ul li.has-sub > a:hover {
-	  	background: url('../images/caret.png') no-repeat;
+	  	background: url('images/caret.png') no-repeat;
 	  	background-position: 90% 195%; /*   what is this for? */
 		color:#d9a734;
 	}
@@ -279,13 +284,13 @@ header {
 		color:#d9a734;
   		text-shadow: 0px 1px 0px #000;
 	}
-/*  ------  END CSS MENU SELECTORS  ---------------  */
+/*  ------  END CSS MENU SELECTORS  -----------------  */
 
 	#navigation > ul li a {
 		text-decoration: none !important;
 	}
-/*  ------  END NAV SELECTORS  --------------------  */
-/*  ------  END HEADER SELECTORS  -----------------  */
+/*  ------  END NAV SELECTORS  ----------------------  */
+/*  ------  END HEADER SELECTORS  -------------------  */
 
 #header-bar {
 	background-color: #828248;
@@ -301,7 +306,7 @@ header {
 	width: 100%;
 }
 
-/*  ------  BEGIN CONTENT SELECTORS  --------------  */
+/*  ------  BEGIN CONTENT SELECTORS  ----------------  */
 #main-outside {
 	background-color: #828248;
 	clear: both;
@@ -330,6 +335,8 @@ header {
 
 }
 #front-page-content {
+	padding-bottom: 15px;
+	text-align: justify;
 	width: 100%;
 }
 #front-page-content a,
@@ -339,16 +346,18 @@ header {
 	color: #5b4131 !important;
 }
 #page-content {
+	text-align: justify;
+	padding-bottom: 15px;
 	width: 100%;
 }
 
-/*  ------  BEGIN ATTACHMENT SELECTORS  -----------  */
+/*  ------  BEGIN ATTACHMENT SELECTORS  -------------  */
 #attachment-content {
 
 }
-/*  ------  END ATTACHMENT SELECTORS  -------------  */
+/*  ------  END ATTACHMENT SELECTORS  ---------------  */
 
-/*  ------  BEGIN GENERAL FLEXSLIDER SELECTORS  ---  */
+/*  ------  BEGIN GENERAL FLEXSLIDER SELECTORS  -----  */
 .flexslider {
 	float: left;
 	height: 380px;
@@ -357,9 +366,9 @@ header {
 .flexslider li {
 	text-decoration: none !important;
 }
-/*  ------  END GENERAL FLEXSLIDER SELECTORS  -----  */
+/*  ------  END GENERAL FLEXSLIDER SELECTORS  -------  */
 
-/*  ------  BEGIN ACCORDION SELECTORS  ------------  */
+/*  ------  BEGIN ACCORDION SELECTORS  --------------  */
 #accordion h4{
 	background-color: #ECE0C9;
 	border: 1px solid black;
@@ -369,22 +378,24 @@ header {
 	line-height: 150%;
 	margin: 0;
 	padding: 4px;
-	width: 97%;
+	width: 100%;
 }
 .accordion-content {
+	background-color: #fff;
 	border: 1px solid #494949;
 	margin: 0;
-	padding: 0 5px;
-	width: 97%;
+	padding: 5px;
+	text-align: justify;
+	width: 100%;
 }
-/*  ------  END ACCORDION SELECTORS  --------------  */
-/*  ------  END CONTENT SELECTORS  ----------------  */
+/*  ------  END ACCORDION SELECTORS  ----------------  */
+/*  ------  END CONTENT SELECTORS  ------------------  */
 
-/*  ------  BEGIN SIDEBAR SELECTORS  --------------  */
+/*  ------  BEGIN SIDEBAR SELECTORS  ----------------  */
 aside {
 	float: right;
 	height: 100%;
-	margin-top: 25px;
+	margin-top: 1.9em;
 	/*70px width: 32.53928%;*/
 	width: 32.55813%;
 }
@@ -400,6 +411,7 @@ aside ul li {
 	list-style-type: none;
 	margin-left: 0;
 	padding-bottom: 10px;
+	padding-right: 0px !important;
 }
 aside ul li a {
 	color: blue;
@@ -422,14 +434,30 @@ aside p {
 .widget-title {
 	font-style: bold;
 }
-/*  ------  END SIDEBAR SELECTORS  ----------------  */
+/*  ------  END SIDEBAR SELECTORS  ------------------  */
+
+/*  ------  BEGIN PAYMENT WIDGET SELECTORS  ---------  */
+#payment-widget {
+	clear: both;
+	float: left;
+	width: 100%;
+}
+#payment-widget .widget {
+	padding: 0 !important;
+}
+#payment-widget > ul li {
+	list-style-type: none;
+	margin-left: 0 !important;
+	padding-left: 0 !important;
+}
+/*  ------  END PAYMENT WIDGET SELECTORS  -----------  */
 
 /*  ------  BEGIN INDEX STYLES  ---------------------  */
 .index-post-latest {
-	border-bottom: 1px solid #DDDDDD;
+	border-bottom: 1px solid #b7b47d;
 	clear: both;
 	float: left;
-	margin-bottom: 20px;
+	margin-bottom: 1em;
 	width: 100%;
 }
 .index-latest-blog-title {
@@ -437,17 +465,15 @@ aside p {
 	float: left;
 	font-weight: bold !important;
 	line-height: 1.3;
-	margin-bottom: 30px;
-	padding-left: 10px;
-	padding-top: 15px;
-	width: 16% ;
+	margin-bottom: .25em;
+	/*width: 16%;*/
 }
 .excerpt {
 	clear: both;
 	font-size: 1em;
 	float: left;
-	padding-top: 12px;
-	width: 82%;
+	text-align: justify;
+	/*width: 82%;*/
 }
 /*  ------  END INDEX STYLES  -----------------------  */
 
@@ -601,7 +627,7 @@ div.entry {
 
 /* POST ITEMS */
 .post-box {
-	border-bottom:1px solid #DDDDDD;
+	border-bottom:1px solid #b7b47d;
 	margin-bottom:30px;
 	padding-bottom:10px;
 }
@@ -643,10 +669,10 @@ div.entry {
 	margin-top: 10px;
 	font-size: 12px;
 }
-/*  --------  END WORDPRESS-GENERATED SELECTORS  --  */
+/*  --------  END WORDPRESS-GENERATED SELECTORS  ----  */
 
-/*  --------  BEGIN PLUGIN SELECTORS  -------------  */
-/*  --------  BEGIN COLLECTIONS TABLES ------------  */
+/*  --------  BEGIN PLUGIN SELECTORS  ---------------  */
+/*  --------  BEGIN COLLECTIONS TABLES --------------  */
 .ai1ec-day {
 	background-color:white;
 }
@@ -656,18 +682,38 @@ div.entry {
 .ai1ec-event {
 	background-color: #f9f9cf;
 }
-/*  --------  END COLLECTIONS TABLES --------------  */
+/*  --------  END COLLECTIONS TABLES ----------------  */
 
-/*  --------  BEGIN CONTACT FORM 7 SELECTORS ------  */
-.first-name input, .last-name input {
-	height: 25px;
-	width: 40%;
+/*  --------  BEGIN CONTACT FORM 7 SELECTORS --------  */
+/*volunteer*/
+.first-name input,
+.last-name input,
+.your-email input, 
+.your-telephone input,
+.your-name input, 
+.your-subject input{
+	padding: 4px;
+	width: 48%;
+}
+.wpcf7 {
+	margin-top: .5em !important;
+	text-align: left !important;
+}
+.wpcf7 p {
+	line-height: 2em !important;
+	margin-bottom: .5em !important;
+}
+.wpcf7 span.firstname, .wpcf7 span.lastname {
+	float: left;
+	width: 49%;
 }
 aside input.wpcf7-email {
 	height: 30px;
 	padding: 4px;
 	width: 85%;
 }
+
+/*subscribe button*/
 aside .wpcf7-submit {
 	background-color: #f2ad5f;
 	background: #f2ad5f; /* Old browsers */
@@ -686,10 +732,11 @@ aside .wpcf7-submit {
 	height: 30px;
 	padding: 4px;
 }
-/*  --------  END CONTACT FORM 7 SELECTORS --------  */
-/*  --------  END PLUGIN SELECTORS  ---------------  */
 
-/*  --------  BEG RESPONSIVE CSS ------------------  */
+/*  --------  END CONTACT FORM 7 SELECTORS ----------  */
+/*  --------  END PLUGIN SELECTORS  -----------------  */
+
+/*  --------  BEG RESPONSIVE CSS --------------------  */
 @media screen and (min-width: 1200px) {
 	#navigation > ul li#responsive-tab {
 	 	 display: none;
@@ -723,6 +770,12 @@ aside .wpcf7-submit {
 	#header-img {
 		display: none;
 	}
+	header .search-form {
+		margin-top: 100px;
+	}
+	input {
+		-webkit-appearance: none;/*eliminates rounded corners for iOS*/
+	}
 	#high-bar, #low-bar {
 		display: none;
 	}
@@ -741,16 +794,16 @@ aside .wpcf7-submit {
 	}
 	#navigation > ul li#responsive-tab {
 		background-color: #58581F;
+	    background: url('images/menu.png') no-repeat;/*placed here purposefully*/
+	    background-position: 82% -60%;
 	    display: block;
 	}
 	#navigation > ul li#responsive-tab a {
-	    background: url('../images/menu.png') no-repeat;
-	    background-position: 95% -35%;
 	    color: #fff;
 	}
 	#navigation > ul li#responsive-tab a:hover {
 	    background-position: 95% 135%;
-	    color: ;
+	    color: #fff;
 	}
 	#navigation > ul li {
 	    display: none;
@@ -799,6 +852,7 @@ aside .wpcf7-submit {
 		width: 100%;
 	}
 	#full-content {
+		padding-left: .5em;
 		width: 100%;
 	}
 	aside {
@@ -810,7 +864,10 @@ aside .wpcf7-submit {
 	}
 	aside ul li {
 		list-style-type: none;
-		padding-bottom: 10px;
+		padding-bottom: .5em;
+	}
+	.widget {
+		padding-left: 10px;
 	}
   	footer {
   		width: 100%;

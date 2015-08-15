@@ -17,6 +17,10 @@
 					get_children_pages();
 				}; ?>
 
+				<?php if( is_page( 'donate')){
+					get_donate_widget();
+				}; ?>
+
 			</div><!--end page-content-->
 
 		</div><!--end full-content-->

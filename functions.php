@@ -13,12 +13,11 @@ add_theme_support( 'html5', $args );
 // add RSS feed links to <head> tag
 add_theme_support( 'automatic-feed-links' );
 
-//adds feature image option
+//adds different image size options
 add_theme_support( 'post-thumbnails' ); 
 
-add_image_size( 'feature-image', 610, 380 );
+add_image_size( 'slideshow', 520, 380 );
 add_image_size( 'bhs-logo', 183, 182 );
-
 
 //for security, hide wp version in web pages and feeds
 function remove_version_info() {
@@ -85,6 +84,14 @@ function my_register_sidebars() {
 			'name' => __( 'Impressions Sidebar' ),
 			'before_widget' => '<li id="%1$s" class="widget %2$s">',
 			'after_widget' => '</li>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
+	register_sidebar(
+		array(
+			'id' => 'payment',
+			'name' => __( 'Payment Widget' ),
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>'
 		)
@@ -203,7 +210,7 @@ function add_flexslider() {
 		foreach ( $attachments as $attachment_id => $attachment ) { // create the list items for images with captions
 
 			$flexslider .= '<li>';
-			$flexslider .= wp_get_attachment_image($attachment_id, 'full'); // get image size large
+			$flexslider .= wp_get_attachment_image($attachment_id, 'slideshow'); // get image size large
 			$flexslider .= '<span class="description">';
 			$flexslider .= get_post_field('post_content', $attachment->ID); // get image description field
 			$flexslider .= '</span>';
@@ -214,6 +221,15 @@ function add_flexslider() {
 		$flexslider .= '</div>';
 
 		return $flexslider;
-} // end see if images attachmed
+	} // end see if images attachmed
 
 } 
+
+function get_donate_widget() {
+	if( is_page( 'donate' )) {
+		get_sidebar( 'payment' );		
+	} 
+	else {
+		return null;
+	}
+}
