@@ -10,8 +10,9 @@ Text Domain: bhswa
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-/*resets*/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+
+/*  ------  BEGIN RESETS  -------------------------  */
 body, body * {
 	box-sizing: border-box;	/* declared width = rendered width */
 	margin: 0;
@@ -23,14 +24,15 @@ a img {
 a {
 	text-decoration: none;
 }
-/*end resets*/
-/*standard styles*/
+/*  ------  END RESETS  ---------------------------  */
+
+/*  ------  STANDARD STYLES  ----------------------  */
 small, .font_small {font-size: 0.889em;}
 
 html {
 	font-size: 1em;
 	min-width: 600px;/*  ? what should this be?  */
-	-webkit-text-size-adjust: none;
+	-webkit-text-size-adjust: 100%;
 }
 body {
 	font-family:"Droid Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -48,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: #5B4131;
   	margin-bottom: 0.5em;
   	font-weight: bold;
-  	line-height: 1.2;
+  	line-height: 125% !important;
 }
 ul {
 	font-size: 1em;
@@ -107,14 +109,15 @@ blockquote {
 strong {
 	font-weight: bolder;
 }
-/*end standard styles*/
+/*  ------  END STANDARD SELECTORS  ---------------  */
 
+/*  ------  BEGIN SPECIFIC SELECTORS  -------------  */
 #outside {
 	background-color: #fff;
 	width: 100%;
 }
 
-/*header styles*/
+/*  ------  BEGIN HEADER SELECTORS  --------------  */
 #outer-header {
 	background-color: #F9F9CF;
 	height: 150px;
@@ -147,7 +150,7 @@ header {
 }
 #header-img {
 	position: absolute;
-	right: 275px;
+	right: 28.06122%;
 	top: 11px;
 }
 #header-search {
@@ -165,9 +168,9 @@ header {
 	height: 30px;
 	width: 50px !important;
 }
-/*end header styles*/
+/*  ------  END HEADER SELECTORS  -----------------  */
 
-/*nav styles*/
+/*  ------  BEGIN NAV SELECTORS  ------------------  */
 #outer-nav {
 	background-color: #58581F;
   	width: 100%;
@@ -181,33 +184,37 @@ header {
 	padding-right: 15px;
 	text-align: right;
 }
-
 #navigation a.hover, #navigation a.focus, #navigation a.current_page {
 	background-color: #58581F;
 }
-
 #navigation li a:hover, #navigation li a:focus{
 	text-decoration:none;
 	color:#d9a734;
 	text-shadow: .5px .5px .5px #684901;
-
 }
-#navigation ul{
-	/*css menu styling*/
-	list-style-type: none;
-	width: auto;
-	margin: 0;
-	padding: 0;
-	/*css menu styling*/
+#navigation > ul{
+		/*css menu styling*/
+		background-color: #58581F;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		-o-border-radius: 2px;
+		border-radius: 2px;
+	  	list-style-type: none;
+		margin: 0;
+		padding: 0;
+		width: auto;
+		/*css menu styling*/
 	text-align: right;
 }
-#navigation ul li{
-	/*css menu styling*/
-  	display: inline-block;
-  	*display: inline;
-	/*css menu styling*/
-	list-style-type: none;
+#navigation > ul li{
+		/*css menu styling*/
+	  	display: inline-block;
+	  	*display: inline;
+		zoom: 1;
+		/*css menu styling*/
+	/*neccesary for bhs styling*/
 	line-height: 50px;
+	list-style-type: none;
 	margin:0 !important;
 	text-align: right;
 	width: auto;
@@ -223,64 +230,69 @@ header {
 	border-right: none;
 	padding-right: 0;
 }
-	/*css menu selectors*/
+
+/*  ------  BEGIN CSS MENU SELECTORS  -------------  */
 	#navigation > ul li#responsive-tab {
 		display: none;/*Hide for large screens*/
 	}
-	/*#navigation > ul li.right {
+	#navigation > ul li.right {
 		float: right;
-	}*/
+	}
 	#navigation > ul li.has-sub {
 	 	position: relative;
-		z-index: 11;
+		z-index: 11;/*to display over content*/
 	}
 	#navigation > ul li.has-sub:hover ul {
-	  	display: block;
+		color:#d9a734;
+		display: block;
 	}
 	#navigation > ul li.has-sub ul {
 	  	background: #58581F;
+		border: 1px solid #ece6e8;
+  		border-bottom: 3px solid #d9ced2;
+  		border-top: 0 none;
 		display: none;
    		list-style-type: none;
- 		position: absolute;
   		margin: 0;
-		text-align: left;
+  		padding: 0;
+ 		position: absolute;
+		text-align: right;
 		width: 160px;
 	}
 	#navigation > ul li.has-sub ul li {
 	  	display: block;
-		text-align: left;
+		text-align: left;/*to align it left instead of right for big nav*/
 	}
 	#navigation > ul li.has-sub > a {
-	  	background-image: url('images/caret.png');
+	  	background-image: url('../images/caret.png');
 	  	background-repeat: no-repeat;
   		background-position: 90% -95%;
 	}
 	#navigation > ul li.has-sub > a.active,
 	#navigation > ul li.has-sub > a:hover {
-	  	background-image: url('images/caret.png') no-repeat;
-	  	background-position: -90% 195%; /*   what is this for? */
+	  	background: url('../images/caret.png') no-repeat;
+	  	background-position: 90% 195%; /*   what is this for? */
+		color:#d9a734;
 	}
 	#navigation > ul li a.active,
 	#navigation > ul li a:hover {
+		color:#d9a734;
   		text-shadow: 0px 1px 0px #000;
 	}
-	#navigation > ul li a {
-		text-decoration: none;
-	}
-	/*end css menu selectors*/
-/*end nav styles*/
+/*  ------  END CSS MENU SELECTORS  ---------------  */
 
-/*start header bar*/
+	#navigation > ul li a {
+		text-decoration: none !important;
+	}
+/*  ------  END NAV SELECTORS  --------------------  */
+/*  ------  END HEADER SELECTORS  -----------------  */
+
 #header-bar {
 	background-color: #828248;
 	clear: both;
 	height: 20px;
 	width: 100%;
 }
-/*end header bar*/
-/*end header styles*/
-
-/*content styles*/
 #high-bar, #low-bar {
 	border-color: #fff;
 	clear: both;
@@ -288,18 +300,23 @@ header {
 	margin: 0 auto;
 	width: 100%;
 }
+
+/*  ------  BEGIN CONTENT SELECTORS  --------------  */
 #main-outside {
 	background-color: #828248;
 	clear: both;
 	overflow: hidden;
-	padding-left:7.14285%;
-	padding-right:7.14285%;
+	/* 70px sides padding-left:7.14285%;
+	padding-right:7.14285%;*/
+	padding-left: 6.12244%;
+	padding-right: 6.12244%;
 	margin: 0 auto;
 	max-width: 980px;/*leave as max*/
 }
 #main-inside {
 	background-color: rgba(255, 255, 255, 0.5);
 	clear: both;
+	float: left;
 	overflow: hidden;
 	font-family: 'Droid Sans', sans-serif;
 	padding:10px 10px 0px 10px;
@@ -308,7 +325,8 @@ header {
 	float: left;
 	margin-top: 25px;
 	min-height: 400px;
-	width: 65.07857%;
+	/*70px width: 65.07857%;*/
+	width: 65.11627%;
 
 }
 #front-page-content {
@@ -323,6 +341,14 @@ header {
 #page-content {
 	width: 100%;
 }
+
+/*  ------  BEGIN ATTACHMENT SELECTORS  -----------  */
+#attachment-content {
+
+}
+/*  ------  END ATTACHMENT SELECTORS  -------------  */
+
+/*  ------  BEGIN GENERAL FLEXSLIDER SELECTORS  ---  */
 .flexslider {
 	float: left;
 	height: 380px;
@@ -331,9 +357,9 @@ header {
 .flexslider li {
 	text-decoration: none !important;
 }
-/*end content styles*/
+/*  ------  END GENERAL FLEXSLIDER SELECTORS  -----  */
 
-/*accordion styles*/
+/*  ------  BEGIN ACCORDION SELECTORS  ------------  */
 #accordion h4{
 	background-color: #ECE0C9;
 	border: 1px solid black;
@@ -351,18 +377,16 @@ header {
 	padding: 0 5px;
 	width: 97%;
 }
-/*end accordion styles*/
+/*  ------  END ACCORDION SELECTORS  --------------  */
+/*  ------  END CONTENT SELECTORS  ----------------  */
 
-/*sidebar panel styles*/
+/*  ------  BEGIN SIDEBAR SELECTORS  --------------  */
 aside {
 	float: right;
 	height: 100%;
 	margin-top: 25px;
-	width: 32.53928%;
-}
-/*primary sidebar styles*/
-
-#primary, #secondary, #impressions {
+	/*70px width: 32.53928%;*/
+	width: 32.55813%;
 }
 aside h3 {
 	border-bottom: 3px solid #b7b47d;
@@ -387,17 +411,6 @@ aside p {
 	font-size: .813em;
 	margin-left: 0;
 }
-#widgets {
-	overflow: hidden;
-}
-#widgets section.widget-item {
-	width: 300px;
-	float: left;
-	margin-right: 20px;
-}
-#widgets section.widget-item:last-child {
-	margin-right: 0px;
-}
 .widget {
 	float: left;
 	margin-bottom: 20px;
@@ -409,20 +422,9 @@ aside p {
 .widget-title {
 	font-style: bold;
 }
-/*end primary sidebar styles*/
+/*  ------  END SIDEBAR SELECTORS  ----------------  */
 
-.email {
-	height: 40px;
-	margin-bottom: 10px;
-	width: 66%;
-}
-.paypal {
-	border-radius: 25px;
-	border: 1px solid black;
-	font-size: 14pt;
-	height: 80px;
-}
-/*index styles*/
+/*  ------  BEGIN INDEX STYLES  ---------------------  */
 .index-post-latest {
 	border-bottom: 1px solid #DDDDDD;
 	clear: both;
@@ -447,9 +449,9 @@ aside p {
 	padding-top: 12px;
 	width: 82%;
 }
-/*end index styles*/
+/*  ------  END INDEX STYLES  -----------------------  */
 
-/*footer styles*/
+/*  ------  BEGIN FOOTER STYLES  --------------------  */
 #outer-footer {
 	background-color: #F9F9CF;
 }
@@ -483,7 +485,6 @@ footer ul li a {
 footer a:hover, footer a:focus {
 	color: black;
 }
-
 #footer-left{
 	float: left;
 	font-size: .75em;
@@ -512,9 +513,9 @@ footer a:hover, footer a:focus {
 #footer-right img {
 	float: right;
 }
-/*end footer styles*/
+/*  ------  END FOOTER STYLES  ----------------------  */
 
-/*  ---------------  BEGIN WORDPRESS-GENERATED SELECTORS  ---------------  */
+/*  ------  BEGIN WORDPRESS-GENERATED SELECTORS  ----  */
 div.entry {
 	margin-bottom: 20px;
 }
@@ -642,6 +643,10 @@ div.entry {
 	margin-top: 10px;
 	font-size: 12px;
 }
+/*  --------  END WORDPRESS-GENERATED SELECTORS  --  */
+
+/*  --------  BEGIN PLUGIN SELECTORS  -------------  */
+/*  --------  BEGIN COLLECTIONS TABLES ------------  */
 .ai1ec-day {
 	background-color:white;
 }
@@ -651,16 +656,40 @@ div.entry {
 .ai1ec-event {
 	background-color: #f9f9cf;
 }
-/*  ---------------  END WORDPRESS-GENERATED SELECTORS  ---------------  */
+/*  --------  END COLLECTIONS TABLES --------------  */
 
-/*  ---------------  BEGIN CONTACT FORM 7 SELECTORS -------------------  */
+/*  --------  BEGIN CONTACT FORM 7 SELECTORS ------  */
 .first-name input, .last-name input {
 	height: 25px;
 	width: 40%;
 }
-/*  ---------------  END CONTACT FORM 7 SELECTORS -------------------  */
+aside input.wpcf7-email {
+	height: 30px;
+	padding: 4px;
+	width: 85%;
+}
+aside .wpcf7-submit {
+	background-color: #f2ad5f;
+	background: #f2ad5f; /* Old browsers */
+	background: -moz-linear-gradient(top, #f2ad5f 0%, #f2ad5f 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2ad5f), color-stop(100%,#f2ad5f)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f2ad5f 0%,#f2ad5f 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f2ad5f 0%,#f2ad5f 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f2ad5f 0%,#f2ad5f 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #f2ad5f 0%,#f2ad5f 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2ad5f', endColorstr='#f2ad5f',GradientType=0 ); /* IE6-9 */	
+	border: 2px solid #bd8500;
+	border-radius: 2px;
+	color: #5b4131;
+	font-size: 1em;
+	font-weight: bold;
+	height: 30px;
+	padding: 4px;
+}
+/*  --------  END CONTACT FORM 7 SELECTORS --------  */
+/*  --------  END PLUGIN SELECTORS  ---------------  */
 
-/* ----------------  BEGIN RESPONSIVE CSS -----------------------------  */
+/*  --------  BEG RESPONSIVE CSS ------------------  */
 @media screen and (min-width: 1200px) {
 	#navigation > ul li#responsive-tab {
 	 	 display: none;
@@ -678,6 +707,7 @@ div.entry {
 /* Mobile Screen Set to 600px or Below  */
 @media screen and (max-width: 600px) {
 	body {
+		font-size: 150%;
 		margin: 0;
 		padding: 0;
 		width: 600px;
@@ -686,22 +716,45 @@ div.entry {
 		max-width: 100%;
 		max-height: 100%;
 	}
+	#logo {
+		height: 200px;
+		width: 200px;
+	}
+	#header-img {
+		display: none;
+	}
+	#high-bar, #low-bar {
+		display: none;
+	}
+/*  --------  BEGIN CSS MENU SELECTORS --------------  */
+	#navigation {
+		padding-right: 0px;
+	}
+	#navigation a, #navigation a:visited {
+		color:#58581F;
+		font-weight: bold;
+	}	
 	#navigation > ul {
-    	width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+		width: 100%;
 	}
 	#navigation > ul li#responsive-tab {
 		background-color: #58581F;
 	    display: block;
 	}
 	#navigation > ul li#responsive-tab a {
-	    background: url('images/menu.png') no-repeat;
+	    background: url('../images/menu.png') no-repeat;
 	    background-position: 95% -35%;
+	    color: #fff;
 	}
 	#navigation > ul li#responsive-tab a:hover {
 	    background-position: 95% 135%;
+	    color: ;
 	}
 	#navigation > ul li {
 	    display: none;
+	    padding-right: 5px;
 	}
 	#navigation > ul li.right {
 	    float: none;
@@ -710,23 +763,36 @@ div.entry {
 	    position: relative;
 	}
 	#navigation > ul li.has-sub ul {
+    	background: #ffffff;
+    	border: 0 none;
 	    display: block;
 	    position: static;
 	    width: 100%;
-    	border: 0 none;
 	}
 	.sub-menu {
 	    display: none;
 	}
-	/*#navigation > ul li.has-sub ul li a span {
-	    display: block;
-	}*/
 	#navigation > ul li.has-sub > a {
 	    background-image: none;
 	}
+	#navigation > ul li {
+		background-color: #fff;
+		width: 100%;
+	}
+	#navigation > ul li.has-sub ul li {
+  	}
+	#navigation > ul li.has-sub ul li a span {
+   		display: block;
+    	padding-right: 24px;
+  	}
+/*  --------  END CSS MENU SELECTORS ----------------  */
 	.flexslider, .flexslider img {
 		margin-left: 0;
 		width: 100%;
+	}
+	#main-outside {
+		padding-left: 0;
+		padding-right: 0;
 	}
 	#main {
 		margin-top: 25px;
@@ -753,14 +819,20 @@ div.entry {
   		display: block;
   	}
 }
+@media screen and (max-width: 400px) {
+	body {
+		font-size: 175%;
+	}
+}
 /* Make sure they show even if hidden in mobile view by JS */
 @media (min-width: 600px) {
   #navigation > ul > li.collapsed {
     display: inline-block !important;
     *display: inline;
+    zoom: 1;
   }
   #navigation > ul ul li.collapsed {
     display: block !important;
   }
 }
-/* ----------------  END RESPONSIVE CSS -------------------------------  */
+/*  --------  END RESPONSIVE CSS --------------------  */
