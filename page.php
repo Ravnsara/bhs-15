@@ -17,7 +17,7 @@
 					get_children_pages();
 				}; ?>
 
-				<?php if( is_page( 'donate')){
+				<?php if( is_page( 'donations')){
 					get_donate_widget();
 				}; ?>
 

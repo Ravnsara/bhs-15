@@ -226,7 +226,7 @@ function add_flexslider() {
 } 
 
 function get_donate_widget() {
-	if( is_page( 'donate' )) {
+	if( is_page( 'donations' )) {
 		get_sidebar( 'payment' );		
 	} 
 	else {
