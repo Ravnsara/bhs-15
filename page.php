@@ -14,7 +14,7 @@
 				<?php endwhile; endif; ?>  
 
 				<?php if( is_page(array( 'get-involved', 'projects' ))){
-					get_children_pages();
+					echo get_children_pages();
 				}; ?>
 
 				<?php if( is_page( 'donations')){
