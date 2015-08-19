@@ -2,7 +2,7 @@
 Theme Name: bhs-15
 Description: Theme for a small archive collection organization
 Version: 1.0
-Author(s): Patrick Daniels, Sunny Eun, Young Han, Christina Rome, Nicole Warnemuende
+Author(s): Nicole Warnemuende, Patrick Daniels, Sunny Eun, Young Han, Christina Rome
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bhswa
@@ -31,7 +31,6 @@ small, .font_small {font-size: 0.889em;}
 
 html {
 	font-size: 1em;
-	min-width: 600px;/*  ? what should this be?  */
 	-webkit-text-size-adjust: 100%;
 }
 body {
@@ -183,7 +182,7 @@ header .search-submit {
 	padding-right: 15px;
 	text-align: right;
 }
-#navigation a.hover, #navigation a.focus, #navigation a.current_page {
+#navigation a.hover, #navigation a.focus, {
 	background-color: #58581F;
 }
 #navigation li a:hover, #navigation li a:focus{
@@ -225,6 +224,7 @@ header .search-submit {
 	font-weight: bold;
 }
 #navigation li.current_page_item a {
+	color: #d9a734;
 }
 #navigation li.last a {
 	border-right: none;
@@ -326,7 +326,6 @@ header .search-submit {
 }
 #front-page-content {
 	padding-bottom: 15px;
-	text-align: justify;
 	width: 100%;
 }
 #front-page-content a,
@@ -336,14 +335,23 @@ header .search-submit {
 	color: #5b4131 !important;
 }
 #page-content {
-	text-align: justify;
 	padding-bottom: 15px;
 	width: 100%;
 }
 
 /*  ------  BEGIN ATTACHMENT SELECTORS  -------------  */
 #attachment-content {
-
+	min-height: 400px;
+	width: 100%;
+}
+.attachment-list li{
+	text-decoration: none;
+	list-style-type: none;
+}
+li.attachment-image {
+	float: left;
+	height: 154px;
+	width: 247px;
 }
 /*  ------  END ATTACHMENT SELECTORS  ---------------  */
 
@@ -470,12 +478,18 @@ ul#menu-eastern-wa.menu li:before {
 	margin-bottom: 1em;
 	width: 100%;
 }
-.index-latest-blog-title {
+.index-latest-blog-title, .excerpt-title {
 	color: #555555;
 	float: left;
 	font-weight: bold !important;
 	line-height: 1.3;
 	margin-bottom: .25em;
+}
+.excerpt-post {
+	clear: both;
+	float: left;
+	margin-bottom: 1em;
+	width: 100%;
 }
 .excerpt {
 	clear: both;
@@ -580,58 +594,64 @@ div.entry {
 .size-thumbnail {
 	padding: 5px;
 }
-#gallery-box {
-	clear: both;
-	float: left;
-	width: 780px;
-	margin-bottom: 25px;
-}
-#gallery-box p {
-	margin: 0px !important;
-}
-#comments-box,
-#respond {
-	clear: both; 	/* clears floated prev/next nav on comments.php template */
-}
-#respond h3{
-	margin-left: 5px;
-}
-
 /* COMMENTS */
-
+.commentlist {
+	width: 100%;
+}
 #comments-head {
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #b7b47d;
+}
+#comments-box {
+	clear: both;
+	width: 100%;
+}
+#comments-box h3 {
+	padding-left: 0 !important;
 }
 #comments-box ol,
 #comments-box ul {
 	list-style-type:none;
-	padding-left: 0;
-	margin-left: 0;
+	padding-left: 0 !important;
+	margin-left: 0 !important;
 }
 #comments-box ol li {
 	margin: 10px 0;
 }
 #comments-box cite {
 	font-weight:bold;
-	font-size: 13px;
+	font-size: .8125em;
 }
 .comment-author {
 	margin-bottom: 2px;
 }
+.comment-meta {
+	background-color: #C1C1A3 !important;
+	font-size: .75em;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.comment-body {
+	margin: 0;
+	padding-left: .5em;
+}
+.comment-content {
+	margin-top: 5px;
+}
 .comment p {
 	clear:both
 }
-.reply {
-	font-size:10px;
+#commentform input#submit {
+	padding: 4px;
 }
-.comment-meta {
-	background-color: #FFFFFF !important;
-	font-size:12px;
-	height: 50px;
+#respond {
+	clear: both; 	/* clears floated prev/next nav on comments.php template */
+}
+.reply {
+	font-size:.625em;
 }
 .avatar {
 	float: left;
-	margin: 0 10px 10px 0;
+	margin: 0 10px 0 0;
 }
 
 /* POST ITEMS */
@@ -654,7 +674,7 @@ div.entry {
 .read-more {
 	font-style: italic;
 }
-/* GALLERY ITEMS */
+/* GALLERY ITEMS 								not sure if need these*/ 
 .gallery {
 	margin: auto;
 }

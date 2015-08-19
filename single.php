@@ -14,6 +14,8 @@
 
 				<?php endwhile; endif; ?>  
 
+			<?php comments_template(); ?>
+
 			</div><!--end page-content-->
 
 		</div><!--end full-content-->
@@ -21,7 +23,7 @@
 			<!--start sidebar-->
 			<?php choose_sidebar(); ?>
 			<!--end sidebar-->
-
+			
 		</div><!--end main-inside-->	
 	</div><!--end main-outside-->	
 <?php get_footer(); ?>
