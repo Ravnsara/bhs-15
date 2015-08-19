@@ -660,7 +660,7 @@ div.entry {
 /*  --------  END WORDPRESS-GENERATED SELECTORS  ----  */
 
 /*  --------  BEGIN PLUGIN SELECTORS  ---------------  */
-/*  --------  BEGIN COLLECTIONS TABLES --------------  */
+
 .ai1ec-day {
 	background-color:white;
 }
@@ -670,12 +670,23 @@ div.entry {
 .ai1ec-event {
 	background-color: #f9f9cf;
 }
+
+/*  --------  BEGIN COLLECTIONS TABLES --------------  */
+
+.tablepress-id-52 thead th {
+	font-size: 12px;
+}
+
+.tablepress .sorting:hover {
+	background-color: #F9F9CF;
+}
 /*  --------  END COLLECTIONS TABLES ----------------  */
 
 /*  --------  BEGIN CONTACT FORM 7 SELECTORS --------  */
 .first-name input,
 .last-name input,
-.your-email input, 
+.your-email input,
+.mailing-address input,
 .your-telephone input,
 .your-name input, 
 .collection-write-in input,
@@ -685,6 +696,18 @@ div.entry {
 .high-school input {
 	padding: 4px;
 	width: 48%;
+}
+.city input {
+    padding: 4px;
+    width: 24%;
+}
+.state input {
+    padding: 4px;
+    width: 6%;
+}
+.zip input {
+    padding: 4px;
+    width: 12%;
 }
 .wpcf7 {
 	margin-top: .5em !important;
