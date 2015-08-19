@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 <!--begin content-->
-			<div id="attachment-content" class="attachment">
+		<div id="full-content">
+
+			<div id="page-content" class="attachment">
 				<strong class="breadcrumb"><?php if (function_exists('bcn_display')) { bcn_display(); } ?></strong>
 				
 				<div id="gallery-box" class="entrytext"> 
@@ -28,11 +30,13 @@
 				
 				</div><!--end gallery-box-->
 
-			<?php endwhile; else: ?>
-				<p>There don't seem to be any attachments yet. Perhaps another time.</p>
-			<?php endif; ?>
-
-			</div><!--end attachment-content-->
+				<aside id="primary">
+					<ul>
+					</ul>
+				</aside>
+				
+				</div><!--end page-content-->
+			</div><!--end full-content-->
 		</div><!--end main-inside-->	
 	</div><!--end main-outside-->
 <?php get_footer(); ?>
