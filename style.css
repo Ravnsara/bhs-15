@@ -60,7 +60,7 @@ ul li {
 	list-style-type: disc;
 	margin-bottom: 8px;
 	margin-left: 1.25em;
-	padding-right: .5em;	
+	padding-right: .5em;
 }
 ol {
 	margin-left:1.75em;
@@ -172,13 +172,14 @@ header .search-submit {
 #outer-nav {
 	background-color: #58581F;
   	width: 100%;
+		overflow:hidden;
 }
 #navigation {
 	background-color: #58581F;
 	font-family: 'Libre Baskerville', serif;
 	font-size: .95em;
 	margin: 0 auto;
-  	max-width: 980px;
+  max-width: 980px;
 	padding-right: 15px;
 	text-align: right;
 }
@@ -200,7 +201,8 @@ header .search-submit {
 	  	list-style-type: none;
 		margin: 0;
 		padding: 0;
-		width: auto;
+		width: 85%;
+		float:right;
 		/*css menu styling*/
 	text-align: right;
 }
@@ -435,21 +437,21 @@ ul#menu-western-wa.menu li {
 	list-style-position: inside;
 	padding-left: 20px;
 }
-ul#menu-western-wa.menu li:before { 
+ul#menu-western-wa.menu li:before {
 	content:"\2013";
 }
 ul#menu-central-wa.menu li {
 	list-style-position: inside;
 	padding-left: 20px;
 }
-ul#menu-central-wa.menu li:before { 
+ul#menu-central-wa.menu li:before {
 	content:"\2013";
 }
 ul#menu-eastern-wa.menu li {
 	list-style-position: inside;
 	padding-left: 20px;
 }
-ul#menu-eastern-wa.menu li:before { 
+ul#menu-eastern-wa.menu li:before {
 	content:"\2013";
 }
 /*  ------  END SIDEBAR SELECTORS  ------------------  */
@@ -674,7 +676,7 @@ div.entry {
 .read-more {
 	font-style: italic;
 }
-/* GALLERY ITEMS 								not sure if need these*/ 
+/* GALLERY ITEMS 								not sure if need these*/
 .gallery {
 	margin: auto;
 }
@@ -753,11 +755,11 @@ div.entry {
 .your-email input,
 .mailing-address input,
 .your-telephone input,
-.your-name input, 
+.your-name input,
 .collection-write-in input,
 .your-subject input,
 .telephone input,
-.your-city input, 
+.your-city input,
 .high-school input {
 	padding: 4px;
 	width: 48%;
@@ -811,7 +813,7 @@ aside .wpcf7-submit {
 	background: -o-linear-gradient(top, #f2ad5f 0%,#f2ad5f 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top, #f2ad5f 0%,#f2ad5f 100%); /* IE10+ */
 	background: linear-gradient(to bottom, #f2ad5f 0%,#f2ad5f 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2ad5f', endColorstr='#f2ad5f',GradientType=0 ); /* IE6-9 */	
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2ad5f', endColorstr='#f2ad5f',GradientType=0 ); /* IE6-9 */
 	border: 2px solid #bd8500;
 	border-radius: 2px;
 	color: #5b4131;
@@ -874,7 +876,7 @@ aside .wpcf7-submit {
 	#navigation a, #navigation a:visited {
 		color:#58581F;
 		font-weight: bold;
-	}	
+	}
 	#navigation > ul {
 		padding-left: 0;
 		padding-right: 0;
@@ -962,13 +964,13 @@ aside .wpcf7-submit {
 	}
 	.first-name input,
 	.last-name input,
-	.your-email input, 
+	.your-email input,
 	.your-telephone input,
-	.your-name input, 
+	.your-name input,
 	.collection-write-in input,
 	.your-subject input,
 	.telephone input,
-	.your-city input, 
+	.your-city input,
 	.high-school input {
 		line-height: 2em !important;
 	}
@@ -982,7 +984,7 @@ aside .wpcf7-submit {
   		width: 100%;
   	}
   	#footer-middle-right,
-  	#footer-middle-left, 
+  	#footer-middle-left,
   	#footer-right {
   		display: none;
   	}
