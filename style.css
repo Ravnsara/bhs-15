@@ -172,7 +172,7 @@ header .search-submit {
 #outer-nav {
 	background-color: #58581F;
   	width: 100%;
-		overflow:hidden;
+
 }
 #navigation {
 	background-color: #58581F;
@@ -198,11 +198,10 @@ header .search-submit {
 		-moz-border-radius: 2px;
 		-o-border-radius: 2px;
 		border-radius: 2px;
-	  	list-style-type: none;
+	  list-style-type: none;
 		margin: 0;
-		padding: 0;
-		width: 85%;
-		float:right;
+		padding-left:27%;
+
 		/*css menu styling*/
 	text-align: right;
 }
@@ -216,6 +215,7 @@ header .search-submit {
 	line-height: 50px;
 	list-style-type: none;
 	margin:0 !important;
+	font-size:.95em;
 	text-align: right;
 	width: auto;
 	padding-left: 15px;
@@ -247,6 +247,7 @@ header .search-submit {
 	#navigation > ul li.has-sub:hover ul {
 		color:#d9a734;
 		display: block;
+
 	}
 	#navigation > ul li.has-sub ul {
 	  	background: #58581F;
@@ -839,6 +840,10 @@ aside .wpcf7-submit {
 
 /* Tablet Screen Set to 800px or Below  */
 @media screen and (max-width: 800px) {
+
+  #navigation > ul{
+
+	}
 	#navigation > ul li#responsive-tab {
 	  	display: none;
 	  	/* Hide for large screens */
