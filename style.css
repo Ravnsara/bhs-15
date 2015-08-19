@@ -423,6 +423,27 @@ aside p {
 .widget-title {
 	font-style: bold;
 }
+ul#menu-western-wa.menu li {
+	list-style-position: inside;
+	padding-left: 20px;
+}
+ul#menu-western-wa.menu li:before { 
+	content:"\2013";
+}
+ul#menu-central-wa.menu li {
+	list-style-position: inside;
+	padding-left: 20px;
+}
+ul#menu-central-wa.menu li:before { 
+	content:"\2013";
+}
+ul#menu-eastern-wa.menu li {
+	list-style-position: inside;
+	padding-left: 20px;
+}
+ul#menu-eastern-wa.menu li:before { 
+	content:"\2013";
+}
 /*  ------  END SIDEBAR SELECTORS  ------------------  */
 
 /*  ------  BEGIN PAYMENT WIDGET SELECTORS  ---------  */
