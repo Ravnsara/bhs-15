@@ -711,7 +711,7 @@ div.entry {
 	height: 20px;
 }
 .tablepress thead th {
-	background-color: #eaeaea;
+	background-color: #eaeaea !important;
 	font-size: 12px;
 	padding-top: 3px;
 	padding-bottom: 3px;
@@ -720,7 +720,7 @@ div.entry {
 	font-size: 14px;
 }
 .dataTables_wrapper label select {
-	margin-bottom: 5px;
+	margin-bottom: 5px !important;
 }
 .dataTables_paginate a {
 	font-size: 14px;
