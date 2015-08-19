@@ -701,6 +701,30 @@ div.entry {
 .tablepress .sorting:hover {
 	background-color: #F9F9CF;
 }
+
+.tablepress tbody td {
+	font-size: 12px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.tablepress tbody td {
+	height: 20px;
+}
+.tablepress thead th {
+	background-color: #eaeaea;
+	font-size: 12px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.dataTables_length {
+	font-size: 14px;
+}
+.dataTables_wrapper label select {
+	margin-bottom: 5px;
+}
+.dataTables_paginate a {
+	font-size: 14px;
+}
 /*  --------  END COLLECTIONS TABLES ----------------  */
 
 /*  --------  BEGIN CONTACT FORM 7 SELECTORS --------  */
