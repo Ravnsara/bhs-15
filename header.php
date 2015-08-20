@@ -18,12 +18,12 @@
 <link rel="shortcut icon" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/favicon.ico" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville|Droid+Sans' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/flexslider.css" type="text/css" media="all" />
+<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/flexslider.css" type="text/css" media="all" />
 <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/style.css" type="text/css" media="all" />
 <!--end links-->
 
 <!--Start scripts-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
 <script src="<?php bloginfo( 'template_url'); ?>/scripts/scripts.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/scripts/jquery.flexslider.js"></script>    
 <!--End scripts-->
