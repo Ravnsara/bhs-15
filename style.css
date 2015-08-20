@@ -228,6 +228,9 @@ header .search-submit {
 #navigation li.current_page_item a {
 	color: #d9a734;
 }
+#navigation li.current_page_item a > ul li a {
+	color: #fff !important;
+}
 #navigation li.last a {
 	border-right: none;
 	padding-right: 0;
