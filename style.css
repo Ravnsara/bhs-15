@@ -200,7 +200,7 @@ header .search-submit {
 		border-radius: 2px;
 	  list-style-type: none;
 		margin: 0;
-		padding-left:27%;
+		padding-left:25%;
 
 		/*css menu styling*/
 	text-align: right;
@@ -850,7 +850,7 @@ aside .wpcf7-submit {
 @media screen and (max-width: 800px) {
 
   #navigation > ul{
-
+		padding-left: 40%;
 	}
 	#navigation > ul li#responsive-tab {
 	  	display: none;
