@@ -435,6 +435,10 @@ aside p {
 .widget-title {
 	font-style: bold;
 }
+.textwidget a {
+	color: #5B4131 !important;
+	font-style: bold;
+}
 ul#menu-western-wa.menu li {
 	list-style-position: inside;
 	padding-left: 20px;

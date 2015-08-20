@@ -234,21 +234,3 @@ function get_donate_widget() {
 		return null;
 	}
 }
-function paginate_gallery() {
-	$args  
-	global $wp_query;
-    $pageNum = 99999999;
-    echo paginate_links(array(
-        'base' => str_replace($pageNum, '%#%', get_pagenum_link($pageNum)),
-        'format' => '?paged=%#%',
-        'total' => $wp_query->max_num_pages,
-        'current' => max(1, get_query_var('paged')),
-        'show_all' => false,
-        'end_size' => 2,
-        'mid_size' => 3,
-        'prev_next' => true,
-        'prev_text' => 'Prev',
-        'next_text' => 'Next',
-        'type' => 'list'
-    ));
-}
