@@ -30,11 +30,14 @@
 				
 				</div><!--end gallery-box-->
 
+				<?php endwhile; else: ?>
+					<p>There don't seem to be any attachments yet. Perhaps another time.</p>
+				<?php endif; ?>
 				<aside id="primary">
 					<ul>
+						<li><?php echo apply_filters( 'the_title', $attachment->post_title ); ?></li>
 					</ul>
 				</aside>
-				
 				</div><!--end page-content-->
 			</div><!--end full-content-->
 		</div><!--end main-inside-->	

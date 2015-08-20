@@ -352,8 +352,9 @@ header .search-submit {
 	list-style-type: none;
 }
 li.attachment-image {
-	float: left;
-	height: 154px;
+	display: inline-block;
+	margin-bottom: 1em;
+	height: 220px;
 	width: 247px;
 }
 /*  ------  END ATTACHMENT SELECTORS  ---------------  */

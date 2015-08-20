@@ -17,7 +17,6 @@ add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' ); 
 
 add_image_size( 'slideshow', 573.33, 380 );//image size for frontpage slideshow
-add_image_size( 'bhs-logo', 183, 182 );
 add_image_size( 'gallery', 247, 154 );//gallery size
 
 //for security, hide wp version in web pages and feeds
@@ -234,4 +233,22 @@ function get_donate_widget() {
 	else {
 		return null;
 	}
+}
+function paginate_gallery() {
+	$args  
+	global $wp_query;
+    $pageNum = 99999999;
+    echo paginate_links(array(
+        'base' => str_replace($pageNum, '%#%', get_pagenum_link($pageNum)),
+        'format' => '?paged=%#%',
+        'total' => $wp_query->max_num_pages,
+        'current' => max(1, get_query_var('paged')),
+        'show_all' => false,
+        'end_size' => 2,
+        'mid_size' => 3,
+        'prev_next' => true,
+        'prev_text' => 'Prev',
+        'next_text' => 'Next',
+        'type' => 'list'
+    ));
 }

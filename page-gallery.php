@@ -21,8 +21,8 @@
 					
 					if ( $images ) {	
 						foreach ( $images as $image ) : ?>
-							<li class="attachment-image" onclick="location.href='<?php echo $link; ?>'">
-							<?php echo the_attachment_link( $image->ID, 'gallery' ); ?>
+							<li class="attachment-image" data-lightbox="gallery">
+								<?php echo the_attachment_link( $image->ID, 'gallery' ); ?>
 							</li> 
 						<?php endforeach;
 					} ?>
