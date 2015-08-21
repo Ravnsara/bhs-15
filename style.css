@@ -736,7 +736,7 @@ div.entry {
 	font-size: 12px;
 }
 
-.tablepress .sorting:hover {
+.tablepress-id-52 .sorting:hover {
 	background-color: #F9F9CF;
 }
 
@@ -780,15 +780,15 @@ div.entry {
 	padding: 4px;
 	width: 48%;
 }
-.city input {
+.mailing-city input {
     padding: 4px;
     width: 24%;
 }
-.state input {
+.mailing-state input {
     padding: 4px;
     width: 6%;
 }
-.zip input {
+.mailing-zip input {
     padding: 4px;
     width: 12%;
 }
