@@ -179,7 +179,7 @@ header .search-submit {
 	font-family: 'Libre Baskerville', serif;
 	font-size: .95em;
 	margin: 0 auto;
-  max-width: 980px;
+ 	max-width: 980px;
 	padding-right: 15px;
 	text-align: right;
 }
@@ -228,7 +228,7 @@ header .search-submit {
 #navigation li.current_page_item a {
 	color: #d9a734;
 }
-#navigation li.current_page_item a > ul li a {
+#navigation li.current_page_item > ul li a {
 	color: #fff !important;
 }
 #navigation li.last a {
@@ -319,16 +319,16 @@ header .search-submit {
 	background-color: rgba(255, 255, 255, 0.5);
 	clear: both;
 	float: left;
-	overflow: hidden;
 	font-family: 'Droid Sans', sans-serif;
+	min-height: 400px;
+	overflow: hidden;
 	padding:10px 10px 0px 10px;
+	width: 100%;
 }
 #full-content {
 	float: left;
 	margin-top: 25px;
-	min-height: 400px;
 	width: 65.1511%;
-
 }
 #front-page-content {
 	padding-bottom: 15px;
@@ -342,12 +342,12 @@ header .search-submit {
 }
 #page-content {
 	padding-bottom: 15px;
+	overflow: hidden;
 	width: 100%;
 }
 
 /*  ------  BEGIN ATTACHMENT SELECTORS  -------------  */
 #gallery-content {
-	min-height: 400px;
 	width: 100%;
 }
 .attachment-list li {
@@ -462,6 +462,9 @@ ul#menu-eastern-wa.menu li {
 }
 ul#menu-eastern-wa.menu li:before {
 	content:"\2013";
+}
+.paypal-donations input {
+	width: 100%
 }
 /*  ------  END SIDEBAR SELECTORS  ------------------  */
 
@@ -688,7 +691,7 @@ div.entry {
 .read-more {
 	font-style: italic;
 }
-/* GALLERY ITEMS 								not sure if need these*/
+/* GALLERY ITEMS */
 .gallery {
 	margin: auto;
 }
@@ -715,7 +718,6 @@ div.entry {
 /*  --------  END WORDPRESS-GENERATED SELECTORS  ----  */
 
 /*  --------  BEGIN PLUGIN SELECTORS  ---------------  */
-
 .ai1ec-day {
 	background-color:white;
 }
@@ -725,7 +727,9 @@ div.entry {
 .ai1ec-event {
 	background-color: #f9f9cf;
 }
-/*  --------  END PLUGIN SELECTORS  ---------------  */
+.jp-carousel-info{
+	display:none;
+}
 /*  --------  BEGIN COLLECTIONS TABLES --------------  */
 
 .tablepress-id-52 thead th {
@@ -845,19 +849,18 @@ aside .wpcf7-submit {
 	 	 /* Hide for large screens */
 	}
 }
-
-/* Tablet Screen Set to 800px or Below  */
+/*  ------  BEGIN SCREEN 800PX OR BELOW STYLES ------  */
 @media screen and (max-width: 800px) {
 
   #navigation > ul{
 
 	}
 	#navigation > ul li#responsive-tab {
-	  	display: none;
-	  	/* Hide for large screens */
+	  	display: none;/* Hide for large screens */
 	}
 }
-/* Mobile Screen Set to 600px or Below  */
+/*  ------  END SCREEN 800PX OR BELOW STYLES --------  */
+/*  ------  BEGIN SCREEN 600PX OR BELOW STYLES ------  */
 @media screen and (max-width: 600px) {
 	body {
 		font-size: 150%;
@@ -885,7 +888,7 @@ aside .wpcf7-submit {
 	#high-bar, #low-bar {
 		display: none;
 	}
-/*  --------  BEGIN CSS MENU SELECTORS --------------  */
+/*  --------  BEGIN 600PX OR LESS CSS MENU SELECTORS   */
 	#navigation {
 		padding-right: 0;
 	}
@@ -944,7 +947,7 @@ aside .wpcf7-submit {
    		display: block;
     	padding-right: 24px;
   	}
-/*  --------  END CSS MENU SELECTORS ----------------  */
+/*  --------  END 600PX OR LESS CSS MENU SELECTORS --  */
 	.flexslider, .flexslider img {
 		margin-left: 0;
 		width: 100%;
@@ -1021,4 +1024,5 @@ aside .wpcf7-submit {
     display: block !important;
   }
 }
+/*  ------  END SCREEN 600PX OR BELOW STYLES --------  */
 /*  --------  END RESPONSIVE CSS --------------------  */
