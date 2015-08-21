@@ -127,7 +127,6 @@ header {
 }
 #logo {
 	float: left;
-	height: 250px;
 	width: 250px;
 	position: absolute;
 	left: 10px;
@@ -844,19 +843,22 @@ aside .wpcf7-submit {
 /*  ------  BEGIN SCREEN 600PX OR BELOW STYLES ------  */
 @media screen and (max-width: 600px) {
 	body {
-		font-size: 150%;
+		font-size: 120%;
 		margin: 0;
 		padding: 0;
-		width: 600px;
 	}
 	img {
 		max-width: 100%;
-		max-height: 100%;
 	}
 	#header-img {
 		display: none;
 	}
-	#social {
+	#header-bar {
+		display: none;
+	}
+	#logo {
+		height: 200px;
+		width: 200px;
 	}
 	header .search-form {
 		padding-top: 28px !important;
@@ -883,7 +885,7 @@ aside .wpcf7-submit {
 	#navigation > ul li#responsive-tab {
 		background-color: #58581F;
 	    background: url('images/menu.png') no-repeat;/*placed here purposefully*/
-	    background-position: 82% -60%;
+	    background-position: 86% -60%;
 	    display: block;
 	}
 	#navigation > ul li#responsive-tab a {
@@ -929,6 +931,7 @@ aside .wpcf7-submit {
 /*  --------  END 600PX OR LESS CSS MENU SELECTORS --  */
 	.flexslider, .flexslider img {
 		margin-left: 0;
+		height: ;
 		width: 100%;
 	}
 	#main-outside {
@@ -1006,6 +1009,11 @@ aside .wpcf7-submit {
 }
 /*  ------  END SCREEN 600PX OR BELOW STYLES --------  */
 @media screen and (max-width: 500px) {
+	body {
+		font-size: 120%;
+		margin: 0;
+		padding: 0;
+	}
 	header .search-form {
 		padding-top: 24px !important;
 		padding-right: .3em !important;
@@ -1017,12 +1025,6 @@ aside .wpcf7-submit {
 		padding-left: 0;
 		padding-right: 0;
 	}
-	#main {
-		width: 100%;
-	}
-	#full-content {
-		width: 100%;
-	}
 	.accordion-content {
 		text-align: left !important;
 	}
@@ -1032,7 +1034,9 @@ aside .wpcf7-submit {
 }
 @media screen and (max-width: 400px) {
 	body {
-		font-size: 175%;
+		font-size: 120%;
+		margin: 0;
+		padding: 0;
 	}
 	header .search-form {
 		padding-right: .3em !important;
@@ -1041,19 +1045,47 @@ aside .wpcf7-submit {
 		padding-left: 0;
 		padding-right: 0;
 	}
-	#main {
-		margin-top: 25px;
-		width: 100%;
-	}
 	#full-content {
 		padding-left: .5em;
 		padding-right: .5em;
-		width: 100%;
+	}
+	#logo {
+		height: 187.5px;
+		width: 187.5px;
+	}
+	#navigation > ul li#responsive-tab {
+	    background-position: 78% -62%;
 	}
 	.accordion-content {
 		text-align: left !important;
 	}
-
+	aside {
+		clear: both;
+		float: left;
+		width: 100%
+	}
+}
+@media screen and (max-width: 380px) {
+	body {
+		font-size: 120%;
+		margin: 0;
+		padding: 0;
+	}
+	header .search-form {
+		width:;
+		padding-right: .3em !important;
+	}
+	#main-outside {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	#full-content {
+		padding-left: .5em;
+		padding-right: .5em;
+	}
+	.accordion-content {
+		text-align: left !important;
+	}
 	aside {
 		clear: both;
 		float: left;
