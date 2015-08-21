@@ -715,7 +715,7 @@ div.entry {
 	font-size: 12px;
 }
 .tablepress-id-52 .sorting:hover {
-	background-color: #F9F9CF;
+	background-color: #F9F9CF !important;
 }
 .tablepress tbody td {
 	font-size: 12px;
