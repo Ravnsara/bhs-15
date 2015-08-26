@@ -38,7 +38,7 @@
 			</div><!--end footer-middle-right-->
 
 			<div id="footer-right" class="footer-div"	>
-				<a href="http://www.mohai.org/"><img src="<?php bloginfo('template_url');?>/images/Mohai_Logo.png" alt="Mohai Logo" ?></a>
+				<a href="http://www.mohai.org/" target="_blank"><img src="<?php bloginfo('template_url');?>/images/Mohai_Logo.png" alt="Mohai Logo" ?></a>
 			</div><!--end footer-right-->
 
 		</footer>

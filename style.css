@@ -25,8 +25,7 @@ a {
 	text-decoration: none;
 }
 /*  ------  END RESETS  -----------------------------  */
-
-/*  ------  STANDARD STYLES  ------------------------  */
+/*  ------  STANDARD SELECTORS  ---------------------  */
 small, .font_small {font-size: 0.889em;}
 
 html {
@@ -105,13 +104,11 @@ strong {
 	font-weight: bolder;
 }
 /*  ------  END STANDARD SELECTORS  -----------------  */
-
 /*  ------  BEGIN SPECIFIC SELECTORS  ---------------  */
 #outside {
 	background-color: #fff;
 	width: 100%;
 }
-
 /*  ------  BEGIN HEADER SELECTORS  -----------------  */
 #outer-header {
 	background-color: #F9F9CF;
@@ -152,7 +149,7 @@ header .search-form {
 	clear: both;
 	float: right;
 	padding-top: 56px;
-	padding-right: 3em;
+	padding-right: 2em;
 }
 header .search-form input {
 	height: 30px;
@@ -168,7 +165,6 @@ header .search-submit {
 }
 /*  ------  END HEADER SEARCH SELECTORS  ------------  */
 /*  ------  END HEADER SELECTORS  -------------------  */
-
 /*  ------  BEGIN NAV SELECTORS  --------------------  */
 #outer-nav {
 	background-color: #58581F;
@@ -201,7 +197,6 @@ header .search-submit {
 	  list-style-type: none;
 		margin: 0;
 		padding-left:25%;
-
 		/*css menu styling*/
 	text-align: right;
 }
@@ -408,9 +403,6 @@ aside ul li {
 	padding-bottom: 10px;
 	padding-right: 0px !important;
 }
-aside ul li a {
-	color: blue;
-}
 aside ul {
 	margin-left: 0;
 }
@@ -473,7 +465,7 @@ ul#menu-eastern-wa.menu li:before {
 	padding-left: 0 !important;
 }
 /*  ------  END PAYMENT WIDGET SELECTORS  -----------  */
-/*  ------  BEGIN INDEX STYLES  ---------------------  */
+/*  ------  BEGIN INDEX SELECTORS  ------------------  */
 .index-post-latest {
 	border-bottom: 1px solid #b7b47d;
 	clear: both;
@@ -500,8 +492,8 @@ ul#menu-eastern-wa.menu li:before {
 	float: left;
 	text-align: justify;
 }
-/*  ------  END INDEX STYLES  -----------------------  */
-/*  ------  BEGIN FOOTER STYLES  --------------------  */
+/*  ------  END INDEX SELECTORS----------------------  */
+/*  ------  BEGIN FOOTER SELECTORS  -----------------  */
 #outer-footer {
 	background-color: #F9F9CF;
 	max-width: 100%;
@@ -564,7 +556,7 @@ footer a:hover, footer a:focus {
 #footer-right img {
 	float: right;
 }
-/*  ------  END FOOTER STYLES  ----------------------  */
+/*  ------  END FOOTER SELECTORS  -------------------  */
 /*  ------  BEGIN WORDPRESS-GENERATED SELECTORS  ----  */
 div.entry {
 	margin-bottom: 20px;
@@ -598,7 +590,7 @@ div.entry {
 .size-thumbnail {
 	padding: 5px;
 }
-/* COMMENTS */
+/*  ------  BEGIN COMMENTS SELECTORS -----------------  */
 .commentlist {
 	width: 100%;
 }
@@ -657,6 +649,7 @@ div.entry {
 	float: left;
 	margin: 0 10px 0 0;
 }
+/*  ------  END COMMENTS SELECTORS -------------------  */
 /* POST ITEMS */
 .post-box {
 	border-bottom:1px solid #b7b47d;
@@ -671,30 +664,6 @@ div.entry {
 .read-more {
 	font-style: italic;
 }
-/* GALLERY ITEMS */
-.gallery {
-	margin: auto;
-}
-.gallery-item {
-	float: left;
-	margin: 5px 3px 5px 0;
-	text-align: center;
-}
-#content p.smallattachment a,
-#content dl.gallery-item a {
-	border-bottom: none;
-}
-#gallery-box img {
-	height: 400px;
-	width: 780px;
-}
-.gallery-caption {
-	margin-left: 0;
-}
-#content p.wp-caption-text {
-	margin-top: 10px;
-	font-size: 12px;
-}
 /*  --------  END WORDPRESS-GENERATED SELECTORS  ----  */
 /*  --------  BEGIN PLUGIN SELECTORS  ---------------  */
 .ai1ec-day {
@@ -706,38 +675,39 @@ div.entry {
 .ai1ec-event {
 	background-color: #f9f9cf;
 }
-.jp-carousel-info{
+.jp-carousel-info {/* this hides the caption and metadata for the plugin used for gallery slideshow*/
 	display:none;
 }
 /*  --------  BEGIN COLLECTIONS TABLES --------------  */
 .tablepress-id-52 thead th {
-	font-size: 12px;
+	font-size: .75em;
 }
 .tablepress-id-52 .sorting:hover {
 	background-color: #F9F9CF !important;
 }
 .tablepress tbody td {
-	font-size: 12px;
+	font-size: .75em;
 	padding-top: 3px;
 	padding-bottom: 3px;
 }
 .tablepress tbody td {
-	height: 20px;
+	background-color: #fff;
+	height: 1.25em;
 }
 .tablepress thead th {
 	background-color: #eaeaea !important;
-	font-size: 12px;
+	font-size: .75em;
 	padding-top: 3px;
 	padding-bottom: 3px;
 }
 .dataTables_length {
-	font-size: 14px;
+	font-size: .875em;
 }
 .dataTables_wrapper label select {
 	margin-bottom: 5px !important;
 }
 .dataTables_paginate a {
-	font-size: 14px;
+	font-size: .875em;
 }
 /*  --------  END COLLECTIONS TABLES ----------------  */
 /*  --------  BEGIN CONTACT FORM 7 SELECTORS --------  */
@@ -819,12 +789,11 @@ aside .wpcf7-submit {
 /*  --------  BEG RESPONSIVE CSS --------------------  */
 @media screen and (min-width: 1200px) {
 	#navigation > ul li#responsive-tab {
-	 	 display: none;/* Hide for large screens */
+	 	display: none;/* Hide for large screens */
 	}
 }
-/*  ------  BEGIN SCREEN 800PX OR BELOW STYLES ------  */
+/*  ------  BEGIN SCREEN 800PX OR BELOW SELECTORS ---  */
 @media screen and (max-width: 800px) {
-
 	header .search-form {
 		padding-right: 1em;
 	}
@@ -838,9 +807,15 @@ aside .wpcf7-submit {
 	#navigation > ul li#responsive-tab {
 	  	display: none;/* Hide for large screens */
 	}
+	.flexslider {
+		height: 315px;
+	}
+	.flexslider .slides img {
+		height: 315px;
+	}
 }
-/*  ------  END SCREEN 800PX OR BELOW STYLES --------  */
-/*  ------  BEGIN SCREEN 600PX OR BELOW STYLES ------  */
+/*  ------  END SCREEN 800PX OR BELOW SELECTORS -----  */
+/*  ------  BEGIN SCREEN 600PX OR BELOW SELECTORS ---  */
 @media screen and (max-width: 600px) {
 	body {
 		font-size: 120%;
@@ -859,9 +834,6 @@ aside .wpcf7-submit {
 	#logo {
 		height: 200px;
 		width: 200px;
-	}
-	header .search-form {
-		padding-top: 28px !important;
 	}
 	input {
 		-webkit-appearance: none;/*eliminates rounded corners for iOS*/
@@ -1007,7 +979,7 @@ aside .wpcf7-submit {
     display: block !important;
   }
 }
-/*  ------  END SCREEN 600PX OR BELOW STYLES --------  */
+/*  ------  END SCREEN 600PX OR BELOW SELECTORS -----  */
 @media screen and (max-width: 500px) {
 	body {
 		font-size: 120%;
@@ -1015,7 +987,6 @@ aside .wpcf7-submit {
 		padding: 0;
 	}
 	header .search-form {
-		padding-top: 24px !important;
 		padding-right: .3em !important;
 	}	
 	#social {
@@ -1024,6 +995,12 @@ aside .wpcf7-submit {
 	#main-outside {
 		padding-left: 0;
 		padding-right: 0;
+	}
+	.flexslider {
+		height: 309px;
+	}
+	.flexslider .slides img {
+		height: 309px;
 	}
 	.accordion-content {
 		text-align: left !important;
@@ -1053,6 +1030,12 @@ aside .wpcf7-submit {
 		height: 187.5px;
 		width: 187.5px;
 	}
+	.flexslider {
+		height: 240px;
+	}
+	.flexslider .slides img {
+		height: 240px;
+	}
 	#navigation > ul li#responsive-tab {
 	    background-position: 78% -62%;
 	}
@@ -1072,8 +1055,11 @@ aside .wpcf7-submit {
 		padding: 0;
 	}
 	header .search-form {
-		width:;
 		padding-right: .3em !important;
+	}
+	#logo {
+		height: 175px;
+		width: 175px;
 	}
 	#main-outside {
 		padding-left: 0;
@@ -1082,6 +1068,12 @@ aside .wpcf7-submit {
 	#full-content {
 		padding-left: .5em;
 		padding-right: .5em;
+	}
+	.flexslider {
+		height: 228px;
+	}
+	.flexslider .slides img {
+		height: 228px;
 	}
 	.accordion-content {
 		text-align: left !important;
