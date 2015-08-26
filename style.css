@@ -2,7 +2,7 @@
 Theme Name: bhs-15
 Description: Theme for a small archive collection organization
 Version: 1.0
-Author(s): Patrick Daniels, Sunny Eun, Young Han, Christina Rome, Nicole Warnemuende
+Author(s): Nicole Warnemuende, Patrick Daniels, Sunny Eun, Young Han, Christina Rome
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bhswa
@@ -10,8 +10,9 @@ Text Domain: bhswa
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-/*resets*/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+
+/*  ------  BEGIN RESETS  -------------------------  */
 body, body * {
 	box-sizing: border-box;	/* declared width = rendered width */
 	margin: 0;
@@ -23,76 +24,49 @@ a img {
 a {
 	text-decoration: none;
 }
-/*end resets*/
-/*standard styles*/
+/*  ------  END RESETS  -----------------------------  */
+/*  ------  STANDARD SELECTORS  ---------------------  */
 small, .font_small {font-size: 0.889em;}
 
 html {
 	font-size: 1em;
-	min-width: 600px;/*  ? what should this be?  */
+	-webkit-text-size-adjust: 100%;
 }
 body {
 	font-family:"Droid Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 100%;
-  /*font-weight: 400;*/
+	line-height: 1.44;
 }
 p {
 	font-family:"Droid Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 1em;
 	color: #494949;
-	line-height: 1.66;
+	line-height: 1.44;
 	margin-bottom: 1.3em;
 }
 h1, h2, h3, h4, h5, h6 {
 	color: #5B4131;
   	margin-bottom: 0.5em;
   	font-weight: bold;
-  	line-height: 1.2;
-}
-/*h1{
-  	margin-top: 0;
-  	font-size: 2em;
-	line-height: 100%;
-}
-h2{
-	font-size: 1.5em;
-	line-height: 100%;
-
-}
-h3{
-	font-size: 1.266em;
-	font-size: 1.188em;
-	line-height: 100%;
-}
-h4{
-	font-size: 1em;
-	line-height: 100%;*/
-
-
+  	line-height: 1.5 !important;
 }
 ul {
 	font-size: 1em;
 	line-height: 150%;
-	margin-left:1.25em;
-	/*margin-bottom: 8px;*/
 }
 ul li {
-	list-style-type: disc;
 	color: #494949;
-	/*margin-left: 2.7%;*/
-	/*margin-bottom: 4px;*/
+	list-style-type: disc;
+	margin-bottom: 8px;
+	margin-left: 1.25em;
+	padding-right: .5em;
 }
 ol {
 	margin-left:1.75em;
-	/*font-size: 1em;
-	line-height: 150%;
-	margin-left: 2.92%;
-	margin-bottom: 8px;*/
 }
 ol li {
-	/*font-size: 16px;/*should be the same size as p*/
-	/*margin-bottom: 4px;
-	margin-left: 28px;*/
+	margin-left:1.75em;
+	margin-bottom: 4px;
 }
 dl {
 	margin-left: 8px;
@@ -109,10 +83,10 @@ a{
 	text-decoration: none;
 }
 a:link {
-	color: black;
+	color: #494949;
 }
 a:visited {
-	color: black;
+	color: #494949;
 	text-decoration: none;
 }
 a:hover, a:focus {
@@ -120,7 +94,7 @@ a:hover, a:focus {
 a img, img {
 	border: none;
 	height: auto;
-	max-width: 100%;
+	max-width: 100%;/*required for responsive*/
 }
 blockquote {
 	font-style: italic;
@@ -129,199 +103,264 @@ blockquote {
 strong {
 	font-weight: bolder;
 }
-/*end standard styles*/
-
-/*header styles*/
+/*  ------  END STANDARD SELECTORS  -----------------  */
+/*  ------  BEGIN SPECIFIC SELECTORS  ---------------  */
+#outside {
+	background-color: #fff;
+	width: 100%;
+}
+/*  ------  BEGIN HEADER SELECTORS  -----------------  */
+#outer-header {
+	background-color: #F9F9CF;
+	height: 150px;
+	max-width: 100%;
+}
 header {
 	background-color: #F9F9CF;
 	height: 150px;
-	margin-top: 2px;
-	max-width: 100%;
+	margin: 0 auto;
+	max-width: 980px;
 	position: relative;
 }
 #logo {
 	float: left;
-	height: 250px;
 	width: 250px;
 	position: absolute;
 	left: 10px;
 	top: 10px;
 	z-index: 3;
 }
-#logo a:hover {
-}
 #social {
 	float: right;
 	padding-top: 20px;
-	margin-right: 15px;
+	padding-right: 1em;
 }
-/*not sure what do do with this*/
 #header-right {
 	float: right;
 	height: 100%;
 }
 #header-img {
 	position: absolute;
-	right: 275px;
+	right: 28.06122%;
 	top: 11px;
 }
-#search {
+/*  ------  BEGIN HEADER SEARCH SELECTORS  ----------  */
+header .search-form {
+	clear: both;
 	float: right;
-	margin-top: 100px;
+	padding-top: 56px;
+	padding-right: 2em;
 }
-#search input {
+header .search-form input {
 	height: 30px;
-	max-width: 200px;
+	line-height: 1.8em;
+	padding: 4px;
+	width: 170px;
 }
-.search-form label span {
+header .search-form label span {
 	display: none;
 }
-.search-submit {
-	height: 30px;
-	max-width: 100px !important;
+header .search-submit {
+	display: none;
 }
-/*end header styles*/
-
-/*nav styles*/
+/*  ------  END HEADER SEARCH SELECTORS  ------------  */
+/*  ------  END HEADER SELECTORS  -------------------  */
+/*  ------  BEGIN NAV SELECTORS  --------------------  */
+#outer-nav {
+	background-color: #58581F;
+  	width: 100%;
+}
 #navigation {
 	background-color: #58581F;
-	clear: both;
 	font-family: 'Libre Baskerville', serif;
 	font-size: .95em;
+	margin: 0 auto;
+ 	max-width: 980px;
 	padding-right: 15px;
-  	max-width: 100%;
+	text-align: right;
 }
-
-#navigation a.hover, #navigation a.focus, #navigation a.current_page {
+#navigation a.hover, #navigation a.focus, {
 	background-color: #58581F;
 }
-
 #navigation li a:hover, #navigation li a:focus{
 	text-decoration:none;
 	color:#d9a734;
 	text-shadow: .5px .5px .5px #684901;
-
 }
-#navigation ul{
-	list-style-image: none;
-	margin: 0;
+#navigation > ul{
+		/*css menu styling*/
+		background-color: #58581F;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		-o-border-radius: 2px;
+		border-radius: 2px;
+	  list-style-type: none;
+		margin: 0;
+		padding-left:25%;
+		/*css menu styling*/
 	text-align: right;
 }
-#navigation ul li{
-  	display: inline-block;
-	list-style-type: none;
+#navigation > ul li {
+		/*css menu styling*/
+	  	display: inline-block;
+	  	*display: inline;
+		zoom: 1;
+		/*css menu styling*/
+	/*neccesary for bhs styling*/
 	line-height: 50px;
+	list-style-type: none;
+	margin:0 !important;
+	font-size:.95em;
 	text-align: right;
 	width: auto;
 	padding-left: 15px;
+	padding-right: 0 !important;
 }
-#navigation a {
-	color:white;
+#navigation a, #navigation a:visited {
+	color:#fff;
 	font-weight: bold;
 }
 #navigation li.current_page_item a {
+	color: #d9a734;
+}
+#navigation li.current_page_item > ul li a {
+	color: #fff !important;
 }
 #navigation li.last a {
 	border-right: none;
 	padding-right: 0;
 }
-	/*css menu selectors*/
+/*  ------  BEGIN CSS MENU SELECTORS  ---------------  */
+	#navigation > ul li#responsive-tab {
+		display: none;/*Hide for large screens*/
+	}
 	#navigation > ul li.right {
 		float: right;
 	}
 	#navigation > ul li.has-sub {
 	 	position: relative;
-		z-index: 11;
+		z-index: 11;/*to display over content*/
 	}
 	#navigation > ul li.has-sub:hover ul {
-	  	display: block;
+		color:#d9a734;
+		display: block;
 	}
 	#navigation > ul li.has-sub ul {
 	  	background: #58581F;
-		border-top: 0 none;
+  		border-top: 0 none;
 		display: none;
    		list-style-type: none;
- 		position: absolute;
   		margin: 0;
-  		padding: 5px;
-		text-align: left;
+  		padding: 0;
+ 		position: absolute;
+		text-align: right;
 		width: 160px;
 	}
 	#navigation > ul li.has-sub ul li {
 	  	display: block;
-		text-align: left;
+		text-align: left;/*to align it left instead of right for large screen nav*/
 	}
 	#navigation > ul li.has-sub > a {
+	  	background-image: url('images/caret.png');
+	  	background-repeat: no-repeat;
+  		background-position: 90% -95%;
 	}
 	#navigation > ul li.has-sub > a.active,
 	#navigation > ul li.has-sub > a:hover {
-	  	background-position: -90% 195%; /*   what is this for? */
-	}
-	#navigation > ul li.active {
+	  	background: url('images/caret.png') no-repeat;
+	  	background-position: 90% 195%;
+		color:#d9a734;
 	}
 	#navigation > ul li a.active,
 	#navigation > ul li a:hover {
-
+		color:#d9a734;
+  		text-shadow: 0px 1px 0px #000;
 	}
+/*  ------  END CSS MENU SELECTORS  -----------------  */
 	#navigation > ul li a {
-		text-decoration: none;
+		text-decoration: none !important;
 	}
-	/*end css menu selectors*/
-/*end nav styles*/
-
-/*start header bar*/
+/*  ------  END NAV SELECTORS  ----------------------  */
+/*  ------  END HEADER SELECTORS  -------------------  */
 #header-bar {
 	background-color: #828248;
+	clear: both;
 	height: 20px;
-	max-width: 980px;
+	width: 100%;
 }
-/*end header bar*/
-/*end header styles*/
-
-/*content styles*/
-#wrapper {
+#high-bar, #low-bar {
 	border-color: #fff;
 	clear: both;
+	height: 15px;
 	margin: 0 auto;
-	max-width: 980px;
+	width: 100%;
 }
+/*  ------  BEGIN CONTENT SELECTORS  ----------------  */
 #main-outside {
 	background-color: #828248;
 	clear: both;
 	overflow: hidden;
-	padding-left:3.06122%;
-	padding-right:3.06122%;
-	margin-top: 15px;
-	max-width: 980px;
+	padding-left: 5.10204%;
+	padding-right: 5.10204%;
+	margin: 0 auto;
+	max-width: 980px;/*leave as max*/
 }
 #main-inside {
 	background-color: rgba(255, 255, 255, 0.5);
 	clear: both;
-	overflow: hidden;
+	float: left;
 	font-family: 'Droid Sans', sans-serif;
-	padding:0px 10px;
+	min-height: 400px;
+	overflow: hidden;
+	padding:10px 10px 0px 10px;
+	width: 100%;
+}
+#full-content {
+	float: left;
+	margin-top: 25px;
+	width: 65.1511%;
 }
 #front-page-content {
-	margin-top: 25px;
-	max-width: 62.24489%;
+	padding-bottom: 15px;
+	width: 100%;
+}
+#front-page-content a,
+#front-page-content a:visited,
+#page-content a,
+#page-content a:visited {
+	color: #5b4131 !important;
 }
 #page-content {
-	float: left;
-	margin-top: 25px;
-	max-width: 62.24489%;
+	padding-bottom: 15px;
+	overflow: hidden;
+	width: 100%;
 }
+/*  ------  BEGIN ATTACHMENT SELECTORS  -------------  */
+#gallery-content {
+	width: 100%;
+}
+.attachment-list li {
+	text-decoration: none;
+	list-style-type: none;
+}
+li.attachment-image {
+	display: inline-block;
+	margin-bottom: 1em;
+	height: 220px;
+	width: 247px;
+}
+/*  ------  END ATTACHMENT SELECTORS  ---------------  */
+/*  ------  BEGIN GENERAL FLEXSLIDER SELECTORS  -----  */
 .flexslider {
 	float: left;
-	margin-top: 25px;
 	height: 380px;
-	max-width: 62.24489%;
+	width: 100%;
 }
 .flexslider li {
 	text-decoration: none !important;
 }
-/*end content styles*/
-
-/*accordion styles*/
+/*  ------  END GENERAL FLEXSLIDER SELECTORS  -------  */
+/*  ------  BEGIN ACCORDION SELECTORS  --------------  */
 #accordion h4{
 	background-color: #ECE0C9;
 	border: 1px solid black;
@@ -331,32 +370,24 @@ header {
 	line-height: 150%;
 	margin: 0;
 	padding: 4px;
-	width: 97%;
+	width: 100%;
 }
 .accordion-content {
-	border: 1px solid black;
+	background-color: #fff;
+	border: 1px solid #494949;
 	margin: 0;
-	padding: 0;
-	width: 97%;
+	padding: 5px;
+	text-align: justify;
+	width: 100%;
 }
-#accordion ul {
-	padding: 4px;
-}
-#accordion ul li{
-	margin-left: 3%;
-}
-/*end accordion styles*/
-
-/*sidebar panel styles*/
+/*  ------  END ACCORDION SELECTORS  ----------------  */
+/*  ------  END CONTENT SELECTORS  ------------------  */
+/*  ------  BEGIN SIDEBAR SELECTORS  ----------------  */
 aside {
 	float: right;
 	height: 100%;
-	margin-top: 25px;
-	max-width: 29.59183%;
-}
-/*primary sidebar styles*/
-
-#primary, #secondary, #impressions {
+	margin-top: 30.4px;
+	width: 32.55813%;
 }
 aside h3 {
 	border-bottom: 3px solid #b7b47d;
@@ -370,9 +401,7 @@ aside ul li {
 	list-style-type: none;
 	margin-left: 0;
 	padding-bottom: 10px;
-}
-aside ul li a {
-	color: blue;
+	padding-right: 0px !important;
 }
 aside ul {
 	margin-left: 0;
@@ -381,21 +410,10 @@ aside p {
 	font-size: .813em;
 	margin-left: 0;
 }
-#widgets {
-	overflow: hidden;
-}
-#widgets section.widget-item {
-	width: 300px;
-	float: left;
-	margin-right: 20px;
-}
-#widgets section.widget-item:last-child {
-	margin-right: 0px;
-}
 .widget {
 	float: left;
 	margin-bottom: 20px;
-	width: 90%
+	width: 100% !important;
 }
 .widget ul li {
 	list-style-type: none;
@@ -403,54 +421,90 @@ aside p {
 .widget-title {
 	font-style: bold;
 }
-/*end primary sidebar styles*/
-
-.email {
-	height: 40px;
-	margin-bottom: 10px;
-	width: 66%;
+.textwidget a {
+	color: #5B4131 !important;
+	font-style: bold;
 }
-.paypal {
-	border-radius: 25px;
-	border: 1px solid black;
-	font-size: 14pt;
-	height: 80px;
+ul#menu-western-wa.menu li {
+	list-style-position: inside;
+	padding-left: 20px;
 }
-/*index styles*/
-.index-post-latest {
-	border-bottom: 1px solid #DDDDDD;
+ul#menu-western-wa.menu li:before {
+	content:"\2013";
+}
+ul#menu-central-wa.menu li {
+	list-style-position: inside;
+	padding-left: 20px;
+}
+ul#menu-central-wa.menu li:before {
+	content:"\2013";
+}
+ul#menu-eastern-wa.menu li {
+	list-style-position: inside;
+	padding-left: 20px;
+}
+ul#menu-eastern-wa.menu li:before {
+	content:"\2013";
+}
+.paypal-donations input {
+	width: 100%
+}
+/*  ------  END SIDEBAR SELECTORS  ------------------  */
+/*  ------  BEGIN PAYMENT WIDGET SELECTORS  ---------  */
+#payment-widget {
 	clear: both;
 	float: left;
-	margin-bottom: 20px;
-	max-width: 75%;
+	width: 100%;
 }
-.index-latest-blog-title {
+#payment-widget .widget {
+	padding: 0 !important;
+}
+#payment-widget > ul li {
+	list-style-type: none;
+	margin-left: 0 !important;
+	padding-left: 0 !important;
+}
+/*  ------  END PAYMENT WIDGET SELECTORS  -----------  */
+/*  ------  BEGIN INDEX SELECTORS  ------------------  */
+.index-post-latest {
+	border-bottom: 1px solid #b7b47d;
+	clear: both;
+	float: left;
+	margin-bottom: 1em;
+	width: 100%;
+}
+.index-latest-blog-title, .excerpt-title {
 	color: #555555;
 	float: left;
 	font-weight: bold !important;
 	line-height: 1.3;
-	margin-bottom: 30px;
-	padding-left: 10px;
-	padding-top: 15px;
-	width: 16% ;
+	margin-bottom: .25em;
+}
+.excerpt-post {
+	clear: both;
+	float: left;
+	margin-bottom: 1em;
+	width: 100%;
 }
 .excerpt {
-	padding-top: 12px;
+	clear: both;
 	font-size: 1em;
-	float: right;
-	max-width: 82%;
+	float: left;
+	text-align: justify;
 }
-/*end index styles*/
-
-/*footer styles*/
+/*  ------  END INDEX SELECTORS----------------------  */
+/*  ------  BEGIN FOOTER SELECTORS  -----------------  */
+#outer-footer {
+	background-color: #F9F9CF;
+	max-width: 100%;
+}
 footer {
 	background-color: #F9F9CF;
-	clear: both;
 	color: #000;
 	font-size: 1em;
-	padding:20px;
-	margin: 15px 0 0 0;
-	max-width: 100%;
+	margin: 0 auto;
+	padding: 20px;
+	max-width: 980px;
 	overflow:hidden;
 }
 footer ul {
@@ -466,51 +520,44 @@ footer ul li {
 	width: 100%;
 }
 footer ul li a {
-	font-family: 'Libre Baskerville', serif;
-	font-size: .875em;
+	font-family:"Droid Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #494949;
+	font-size: 1em;
 	font-weight: bold;
 }
 footer a:hover, footer a:focus {
-	border-bottom: 1px solid #494949;
-	color: #494949;
-}
-footer p a:hover, footer p a:focus {
-	border-bottom: none !important;
+	color: black;
 }
 #footer-left{
 	float: left;
 	font-size: .75em;
-	width: 35%;
+	width: 30%;
 }
 #footer-middle-left {
 	float: left;
 	padding-right: 2%;
 	margin-left: 5%;
-	width: 15%;
+	width: 20%;
 }
 #footer-middle-left, #footer-middle-right {
-	border-left: 2px solid black;
-	/*margin-top: 2%;*/
+	border-left: 2px solid #494949;
 }
 #footer-middle-left ul li, #footer-middle-right ul li {
 	display: block;
-	padding-left: 1%;
-	padding-right: 1%;
 }
 #footer-middle-right {
 	float: left;
-	width: 15%;
+	width: 20%;
 }
 #footer-right {
 	float: right;
-	width: 20%;
+	width: 15%;
 }
 #footer-right img {
 	float: right;
 }
-/*end footer styles*/
-
-/*  ---------------  BEGIN WORDPRESS-GENERATED SELECTORS  ---------------  */
+/*  ------  END FOOTER SELECTORS  -------------------  */
+/*  ------  BEGIN WORDPRESS-GENERATED SELECTORS  ----  */
 div.entry {
 	margin-bottom: 20px;
 }
@@ -532,6 +579,9 @@ div.entry {
 	margin-left: auto;
 	margin-right: auto;
 }
+#nav-image {
+	width: 100%;
+}
 #previous_image a,
 #next_image a {
 	border-bottom: none;
@@ -540,63 +590,69 @@ div.entry {
 .size-thumbnail {
 	padding: 5px;
 }
-#gallery-box {
-	clear: both;
-	float: left;
-	width: 780px;
-	margin-bottom: 25px;
+/*  ------  BEGIN COMMENTS SELECTORS -----------------  */
+.commentlist {
+	width: 100%;
 }
-#gallery-box p {
-	margin: 0px !important;
-}
-#comments-box,
-#respond {
-	clear: both; 	/* clears floated prev/next nav on comments.php template */
-}
-#respond h3{
-	margin-left: 5px;
-}
-
-/* COMMENTS */
-
 #comments-head {
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #b7b47d;
+}
+#comments-box {
+	clear: both;
+	width: 100%;
+}
+#comments-box h3 {
+	padding-left: 0 !important;
 }
 #comments-box ol,
 #comments-box ul {
 	list-style-type:none;
-	padding-left: 0;
-	margin-left: 0;
+	padding-left: 0 !important;
+	margin-left: 0 !important;
 }
 #comments-box ol li {
 	margin: 10px 0;
 }
 #comments-box cite {
 	font-weight:bold;
-	font-size: 13px;
+	font-size: .8125em;
 }
 .comment-author {
 	margin-bottom: 2px;
 }
+.comment-meta {
+	background-color: #C1C1A3 !important;
+	font-size: .75em;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.comment-body {
+	margin: 0;
+	padding-left: .5em;
+}
+.comment-content {
+	margin-top: 5px;
+}
 .comment p {
 	clear:both
 }
-.reply {
-	font-size:10px;
+#commentform input#submit {
+	padding: 4px;
 }
-.comment-meta {
-	background-color: #FFFFFF !important;
-	font-size:12px;
-	height: 50px;
+#respond {
+	clear: both; 	/* clears floated prev/next nav on comments.php template */
+}
+.reply {
+	font-size:.625em;
 }
 .avatar {
 	float: left;
-	margin: 0 10px 10px 0;
+	margin: 0 10px 0 0;
 }
-
+/*  ------  END COMMENTS SELECTORS -------------------  */
 /* POST ITEMS */
 .post-box {
-	border-bottom:1px solid #DDDDDD;
+	border-bottom:1px solid #b7b47d;
 	margin-bottom:30px;
 	padding-bottom:10px;
 }
@@ -605,39 +661,11 @@ div.entry {
 	font-style:italic;
 	width: 460px;
 }
-.sticky {
-
-}
-.bypostauthor {
-
-}
 .read-more {
 	font-style: italic;
 }
-/* GALLERY ITEMS */
-.gallery {
-	margin: auto;
-}
-.gallery-item {
-	float: left;
-	margin: 5px 3px 5px 0;
-	text-align: center;
-}
-#content p.smallattachment a,
-#content dl.gallery-item a {
-	border-bottom: none;
-}
-#gallery-box img {
-	height: 400px;
-	width: 780px;
-}
-.gallery-caption {
-	margin-left: 0;
-}
-#content p.wp-caption-text {
-	margin-top: 10px;
-	font-size: 12px;
-}
+/*  --------  END WORDPRESS-GENERATED SELECTORS  ----  */
+/*  --------  BEGIN PLUGIN SELECTORS  ---------------  */
 .ai1ec-day {
 	background-color:white;
 }
@@ -645,112 +673,299 @@ div.entry {
 	background-color:#b7b47d;
 }
 .ai1ec-event {
-	#f9f9cf;
+	background-color: #f9f9cf;
 }
-/*  ---------------  END WORDPRESS-GENERATED SELECTORS  ---------------  */
-/* ----------------  BEGIN RESPONSIVE CSS -----------------------------  */
-@media screen and (min-width: 1200px) {
-	#navigation > ul li#responsive-tab {
-	 	 display: none;
-	 	 /* Hide for large screens */
-	}
+.jp-carousel-info {/* this hides the caption and metadata for the plugin used for gallery slideshow*/
+	display:none;
+}
+/*  --------  BEGIN COLLECTIONS TABLES --------------  */
+.tablepress-id-52 thead th {
+	font-size: .75em;
+}
+.tablepress-id-52 .sorting:hover {
+	background-color: #F9F9CF !important;
+}
+.tablepress tbody td {
+	font-size: .75em;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.tablepress tbody td {
+	background-color: #fff;
+	height: 1.25em;
+}
+.tablepress thead th {
+	background-color: #eaeaea !important;
+	font-size: .75em;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.dataTables_length {
+	font-size: .875em;
+}
+.dataTables_wrapper label select {
+	margin-bottom: 5px !important;
+}
+.dataTables_paginate a {
+	font-size: .875em;
+}
+/*  --------  END COLLECTIONS TABLES ----------------  */
+/*  --------  BEGIN CONTACT FORM 7 SELECTORS --------  */
+.first-name input,
+.last-name input,
+.your-email input,
+.mailing-address input,
+.your-telephone input,
+.your-name input,
+.collection-write-in input,
+.your-subject input,
+.telephone input,
+.your-city input,
+.high-school input {
+	padding: 4px;
+	width: 48%;
+}
+.mailing-city input {
+    padding: 4px;
+    width: 24%;
+}
+.mailing-state input {
+    padding: 4px;
+    width: 6%;
+}
+.mailing-zip input {
+    padding: 4px;
+    width: 12%;
+}
+.wpcf7 {
+	margin-top: .5em !important;
+	text-align: left !important;
+}
+.wpcf7 p {
+	line-height: 2em !important;
+	margin-bottom: .5em !important;
+}
+.wpcf7 span.firstname, .wpcf7 span.lastname {
+	float: left;
+	width: 49%;
+}
+.wpcf7 span.label {
+	float: left;
+	text-align: left;
+	width: 49%;
+}
+.wpcf7 select {
+	height: 25px;
+	padding-right: 4px;
+}
+aside input.wpcf7-email {
+	height: 30px;
+	padding: 4px;
+	width: 85%;
 }
 
-/* Tablet Screen Set to 800px or Below  */
-@media screen and (max-width: 800px) {
+/*subscribe button*/
+aside .wpcf7-submit {
+	background-color: #f2ad5f;
+	background: #f2ad5f; /* Old browsers */
+	background: -moz-linear-gradient(top, #f2ad5f 0%, #f2ad5f 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2ad5f), color-stop(100%,#f2ad5f)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f2ad5f 0%,#f2ad5f 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f2ad5f 0%,#f2ad5f 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f2ad5f 0%,#f2ad5f 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #f2ad5f 0%,#f2ad5f 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2ad5f', endColorstr='#f2ad5f',GradientType=0 ); /* IE6-9 */
+	border: 2px solid #bd8500;
+	border-radius: 2px;
+	color: #5b4131;
+	font-size: 1em;
+	font-weight: bold;
+	height: 30px;
+	padding: 4px;
+}
+
+/*  --------  END CONTACT FORM 7 SELECTORS ----------  */
+/*  --------  END PLUGIN SELECTORS  -----------------  */
+/*  --------  BEG RESPONSIVE CSS --------------------  */
+@media screen and (min-width: 1200px) {
 	#navigation > ul li#responsive-tab {
-	  	display: none;
-	  	/* Hide for large screens */
+	 	display: none;/* Hide for large screens */
 	}
 }
-/* Mobile Screen Set to 600px or Below  */
+/*  ------  BEGIN SCREEN 800PX OR BELOW SELECTORS ---  */
+@media screen and (max-width: 800px) {
+	header .search-form {
+		padding-right: 1em;
+	}
+	#navigation {
+		padding-right: 14px;
+	}
+  	#navigation > ul {
+		padding-left: 40%;
+		padding-right: 1%;
+	}
+	#navigation > ul li#responsive-tab {
+	  	display: none;/* Hide for large screens */
+	}
+	.flexslider {
+		height: 315px;
+	}
+	.flexslider .slides img {
+		height: 315px;
+	}
+}
+/*  ------  END SCREEN 800PX OR BELOW SELECTORS -----  */
+/*  ------  BEGIN SCREEN 600PX OR BELOW SELECTORS ---  */
 @media screen and (max-width: 600px) {
 	body {
+		font-size: 120%;
 		margin: 0;
 		padding: 0;
-		width: 600px;
 	}
 	img {
-		max-width: 100%;
-		max-height: 100%;
-	}
-	#wrapper {
-		max-width: 100%;
-	}
-	#header {
 		max-width: 100%;
 	}
 	#header-img {
 		display: none;
 	}
+	#header-bar {
+		display: none;
+	}
+	#logo {
+		height: 200px;
+		width: 200px;
+	}
+	input {
+		-webkit-appearance: none;/*eliminates rounded corners for iOS*/
+	}
+	#high-bar, #low-bar {
+		display: none;
+	}
+/*  --------  BEGIN 600PX OR LESS CSS MENU SELECTORS   */
+	#navigation {
+		padding-right: 0;
+	}
+	#navigation a, #navigation a:visited {
+		color:#58581F;
+		font-weight: bold;
+	}
 	#navigation > ul {
-    	width: 100%;
-	  }
-	  #navigation > ul li#responsive-tab {
-	    background-color: #58581F;
+		padding-left: 0;
+		padding-right: 0;
+		width: 100%;
+	}
+	#navigation > ul li#responsive-tab {
+		background-color: #58581F;
+	    background: url('images/menu.png') no-repeat;/*placed here purposefully*/
+	    background-position: 86% -60%;
 	    display: block;
-	  }
-	  #navigation > ul li#responsive-tab a {
-	    background: url('images/menu.png') no-repeat;
-	    background-position: 95% -35%;
-	  }
-	  #navigation > ul li#responsive-tab a:hover {
+	}
+	#navigation > ul li#responsive-tab a {
+	    color: #fff;
+	}
+	#navigation > ul li#responsive-tab a:hover {
 	    background-position: 95% 135%;
-	  }
-	  #navigation > ul li {
+	    color: #fff;
+	}
+	#navigation > ul li {
 	    display: none;
-	  }
-	  #navigation > ul li.right {
+	    padding-right: .25em !important;
+	}
+	#navigation > ul li.right {
 	    float: none;
-	  }
-	  #navigation > ul li.has-sub {
+	}
+	#navigation > ul li.has-sub {
 	    position: relative;
-	  }
-	  #navigation > ul li.has-sub ul {
-	    background: #ffffff;
+	}
+	#navigation > ul li.has-sub ul {
+    	background: #ffffff;
+    	border: 0 none;
 	    display: block;
 	    position: static;
 	    width: 100%;
-    	border: 0 none;
-	  }
-	  #navigation > ul li.has-sub ul li {
-	    display: block !important;
-	  }
-	  #navigation > ul li.has-sub ul li a span {
-	    display: block;
-	    padding-left: 24px;
-	  }
-	  #navigation > ul li.has-sub > a {
+	}
+	.sub-menu {
+	    display: none;
+	}
+	#navigation > ul li.has-sub > a {
 	    background-image: none;
-	  }
+	}
+	#navigation > ul li {
+		background-color: #fff;
+		width: 100%;
+	}
+	#navigation > ul li.has-sub ul li {
+  	}
+	#navigation > ul li.has-sub ul li a span {
+   		display: block;
+    	padding-right: 24px;
+  	}
+/*  --------  END 600PX OR LESS CSS MENU SELECTORS --  */
 	.flexslider, .flexslider img {
 		margin-left: 0;
-		max-width: 100%;
+		height: ;
+		width: 100%;
+	}
+	#main-outside {
+		padding-left: 0;
+		padding-right: 0;
 	}
 	#main {
 		margin-top: 25px;
-		max-width: 100%;
+		width: 100%;
 	}
-	#front-page-content, #page-content {
-		max-width: 100%;
+	#full-content {
+		padding-left: .5em;
+		padding-right: .5em;
+		width: 100%;
 	}
+	.accordion-content {
+		text-align: left !important;
+	}
+	/*sidebar*/
 	aside {
 		clear: both;
 		float: left;
-		padding-left: 2.08%;
-		padding-right: 1.04%;
-		max-width: 100%
+		width: 100%
 	}
 	aside ul li {
 		list-style-type: none;
-		margin-left: 2.08%;
-		padding-bottom: 10px;
+		padding-bottom: .5em;
 	}
+	.widget {
+		padding-left: 10px;
+		width: 100%;
+	}
+	.timely.ai1ec-agenda-widget-view.ai1ec-clearfix {
+		width: 100% !important;
+	}
+	/*contact forms*/
+	.first-name input,
+	.last-name input,
+	.your-email input,
+	.your-telephone input,
+	.your-name input,
+	.collection-write-in input,
+	.your-subject input,
+	.telephone input,
+	.your-city input,
+	.high-school input {
+		line-height: 2em !important;
+	}
+	/*footer*/
   	footer {
-  		max-width: 100%;
+  		width: 100%;
   	}
-  	footer ul li {
-  		display: block;
+  	#footer-left {
+  		clear: both;
+  		float: left;
+  		font-size: 100%;
+  		width: 100%;
+  	}
+  	#footer-middle-right,
+  	#footer-middle-left,
+  	#footer-right {
+  		display: none;
   	}
 }
 /* Make sure they show even if hidden in mobile view by JS */
@@ -758,9 +973,115 @@ div.entry {
   #navigation > ul > li.collapsed {
     display: inline-block !important;
     *display: inline;
+    zoom: 1;
   }
   #navigation > ul ul li.collapsed {
     display: block !important;
   }
 }
-/* ----------------  END RESPONSIVE CSS -------------------------------  */
+/*  ------  END SCREEN 600PX OR BELOW SELECTORS -----  */
+@media screen and (max-width: 500px) {
+	body {
+		font-size: 120%;
+		margin: 0;
+		padding: 0;
+	}
+	header .search-form {
+		padding-right: .3em !important;
+	}	
+	#social {
+		padding-right: .3em !important;
+	}
+	#main-outside {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.flexslider {
+		height: 309px;
+	}
+	.flexslider .slides img {
+		height: 309px;
+	}
+	.accordion-content {
+		text-align: left !important;
+	}
+	aside {
+		width: 100%
+	}
+}
+@media screen and (max-width: 400px) {
+	body {
+		font-size: 120%;
+		margin: 0;
+		padding: 0;
+	}
+	header .search-form {
+		padding-right: .3em !important;
+	}
+	#main-outside {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	#full-content {
+		padding-left: .5em;
+		padding-right: .5em;
+	}
+	#logo {
+		height: 187.5px;
+		width: 187.5px;
+	}
+	.flexslider {
+		height: 240px;
+	}
+	.flexslider .slides img {
+		height: 240px;
+	}
+	#navigation > ul li#responsive-tab {
+	    background-position: 78% -62%;
+	}
+	.accordion-content {
+		text-align: left !important;
+	}
+	aside {
+		clear: both;
+		float: left;
+		width: 100%
+	}
+}
+@media screen and (max-width: 380px) {
+	body {
+		font-size: 120%;
+		margin: 0;
+		padding: 0;
+	}
+	header .search-form {
+		padding-right: .3em !important;
+	}
+	#logo {
+		height: 175px;
+		width: 175px;
+	}
+	#main-outside {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	#full-content {
+		padding-left: .5em;
+		padding-right: .5em;
+	}
+	.flexslider {
+		height: 228px;
+	}
+	.flexslider .slides img {
+		height: 228px;
+	}
+	.accordion-content {
+		text-align: left !important;
+	}
+	aside {
+		clear: both;
+		float: left;
+		width: 100%
+	}
+}
+/*  --------  END RESPONSIVE CSS --------------------  */

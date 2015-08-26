@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 <!--begin main-->
+		<div id="full-content">
+
 			<div id="page-content">
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -11,12 +13,22 @@
 
 				<?php endwhile; endif; ?>  
 
-				<?php get_children_pages(); ?>
+				<?php if( is_page(array( 'get-involved', 'projects' ))){
+					echo get_children_pages();
+				}; ?>
+
+				<?php if( is_page( 'donations')){
+					get_donate_widget();
+				}; ?>
 
 			</div><!--end page-content-->
-			<!--start sidebar-->
-			<?php choose_sidebar(); ?>
-			<!--end sidebar-->
+
+		</div><!--end full-content-->
+
+		<!--start sidebar-->
+		<?php choose_sidebar(); ?>
+		<!--end sidebar-->
+
 		</div><!--end main-inside-->	
 	</div><!--end main-outside-->
 	

@@ -13,12 +13,11 @@ add_theme_support( 'html5', $args );
 // add RSS feed links to <head> tag
 add_theme_support( 'automatic-feed-links' );
 
-//adds feature image option
+//adds different image size options
 add_theme_support( 'post-thumbnails' ); 
 
-add_image_size( 'feature-image', 610, 380 );
-add_image_size( 'bhs-logo', 183, 182 );
-
+add_image_size( 'slideshow', 573.33, 380 );//image size for frontpage slideshow
+add_image_size( 'gallery', 247, 154 );//gallery size
 
 //for security, hide wp version in web pages and feeds
 function remove_version_info() {
@@ -89,22 +88,44 @@ function my_register_sidebars() {
 			'after_title' => '</h3>'
 		)
 	);
+	register_sidebar(
+		array(
+			'id' => 'payment',
+			'name' => __( 'Payment Widget' ),
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
 	/* Repeat register_sidebar() code for additional sidebars. */
 }
 
+//if there is a parent get the post name of the parent page
+function get_parent_title(){
+
+	global $post;
+
+	if(empty($post->post_parent)){
+		$theTitle = get_the_title($post->ID);
+	} else {
+		$theTitle = get_the_title($post->post_parent);
+	}
+	return $theTitle;
+}
 //set sidebar based on page
 function choose_sidebar() {
-	if(is_page( 'about' )){ 
+
+	$theParent = get_parent_title();
+
+	if( is_page( 'about' )){ 
 		get_sidebar( 'secondary' );
 	} 
-	elseif (is_page( 'impressions' )){ 
+	elseif ( is_page('Impressions') || $theParent == 'Impressions' ){
 		get_sidebar( 'impressions' );
-	} 
+	}
 	else {
 		get_sidebar( 'primary' );
 	}
 }
-
 
 // Remove rel attribute from the category list
 function remove_category_list_rel($output)
@@ -129,12 +150,13 @@ function my_add_excerpts_to_pages(){
 	add_post_type_support( 'page', 'excerpt');
 }
 
-//pulls in children page excerpt
+//pulls in children page excerpt by Mike Sinkula adapted for BHS
 function get_children_pages() {
 	
 	global $post;
 	
 	rewind_posts(); // stop any previous loops 
+
 	query_posts(array(
 		'post_parent' => $post->ID,
 		'post_type' => 'page', 
@@ -143,29 +165,34 @@ function get_children_pages() {
 		'order' => 'ASC',
 		'orderby' => 'menu_order'
 	)); // query and order child pages 
+
+	$excerpt = "";
     
 	while (have_posts()) : the_post(); 
+
 	
 		$childPermalink = get_permalink( $post->ID ); // post permalink
 		$childID = $post->ID; // post id
 		$childTitle = $post->post_title; // post title
 		$childExcerpt = $post->post_excerpt; // post excerpt
-        
-		echo '<article id="page-excerpt-'.$childID.'" class="page-excerpt">';
-		echo '<h3><a href="'.$childPermalink.'">'.$childTitle.' </a></h3>';
-		echo '<p>'.$childExcerpt.' <a href="'.$childPermalink.'">Read More&nbsp;&raquo;</a></p>';
-		echo '</article>';
-        
+
+		$excerpt .= '<article id="index-post-latest-'.$childID.'" class="excerpt-post">';
+		$excerpt .= '<h3 class="excerpt-title"><a href="'.$childPermalink.'">'.$childTitle.' </a></h3>';
+		$excerpt .= '<div class="excerpt">'.$childExcerpt.' <a href="'.$childPermalink.'">Read More&nbsp;&raquo;</a></div>';
+		$excerpt .= '</article>';
+
 	endwhile;
+
+	return $excerpt;
 	
-	// reset query
+	// must include this to reset query
 	wp_reset_query();
 }
 
-// Add a Flexslider Gallery	
+// Add a Flexslider Gallery	by Mike Sinkula adapted for BHS
 function add_flexslider() {
 	
-	global $post; // don't forget to make this a global variable inside your function
+	global $post;
 
 	$attachments = get_children(array(
 		'post_parent' => $post->ID, 
@@ -175,18 +202,18 @@ function add_flexslider() {
 		'post_mime_type' => 'image', 
 	));
 
-	if ($attachments) { // see if there are images attached to posting
+	if ($attachments) {
 		$flexslider = "";
 
 		$flexslider = '<div class="flexslider">';
 		$flexslider .= '<ul class="slides">';
 		
-		foreach ( $attachments as $attachment_id => $attachment ) { // create the list items for images with captions
+		foreach ( $attachments as $attachment_id => $attachment ) {
 
 			$flexslider .= '<li>';
-			$flexslider .= wp_get_attachment_image($attachment_id, 'full'); // get image size large
+			$flexslider .= wp_get_attachment_image($attachment_id, 'slideshow'); 
 			$flexslider .= '<span class="description">';
-			$flexslider .= get_post_field('post_content', $attachment->ID); // get image description field
+			$flexslider .= get_post_field('post_content', $attachment->ID); 
 			$flexslider .= '</span>';
 			$flexslider .= '</li>';
 		}
@@ -195,6 +222,15 @@ function add_flexslider() {
 		$flexslider .= '</div>';
 
 		return $flexslider;
-} // end see if images attachmed
+	} // end see if images attachmed
 
 } 
+//pulls in paypal widget to page. add additional pages after 'donations' if needed
+function get_donate_widget() {
+	if( is_page( 'donations' )) {
+		get_sidebar( 'payment' );		
+	} 
+	else {
+		return null;
+	}
+}

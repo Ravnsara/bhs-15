@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 <!--begin main-->
+		<div id="full-content">
+
 			<div id="page-content">
 				<h2><?php _e( 'Not Found', 'bh-15' ); ?></h2>
 
@@ -10,6 +12,8 @@
 				<?php get_search_form(); ?>
 
 			</div><!--end page-content-->
+
+		</div><!--end full-content-->
 
 			<!--start sidebar-->
 			<?php choose_sidebar(); ?>
